@@ -1,12 +1,23 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-$domainName = $_SERVER['SERVER_NAME'];
+$domainName = $_SERVER['SERVER_NAME'] ?? '';
+$httpHost = $_SERVER['HTTP_HOST'] ?? '';
 
-if ($domainName == 'localhost' || $domainName == 'localhost:8080' || $domainName == '127.0.0.1') {
-    $Url = $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-    $Url = explode('/', $Url);
-    $domainName = $Url[0] . '/' . $Url[1];
+// Check if running on localhost with port 8080 (development)
+if ($domainName == 'localhost' || $domainName == '127.0.0.1' || strpos($httpHost, 'localhost:8080') !== false || strpos($httpHost, '127.0.0.1:8080') !== false) {
+    $baseUrl = 'http://localhost:8080/';
+} else {
+    // Production or other environment - use original logic
+    if ($domainName == 'localhost' || $domainName == 'localhost:8080' || $domainName == '127.0.0.1') {
+        $Url = $httpHost . ($_SERVER["REQUEST_URI"] ?? '');
+        $Url = explode('/', $Url);
+        if (isset($Url[0]) && isset($Url[1])) {
+            $domainName = $Url[0] . '/' . $Url[1];
+        }
+    }
+    $baseUrl = 'https://' . $domainName . '/alpha/alpha/alpha/';
 }
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -29,7 +40,7 @@ if ($domainName == 'localhost' || $domainName == 'localhost:8080' || $domainName
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://' . $domainName . '/alpha/alpha/alpha/';
+$config['base_url'] = $baseUrl;
 
 /*
 |--------------------------------------------------------------------------
