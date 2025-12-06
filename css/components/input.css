@@ -2,15 +2,21 @@
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
+  gap: 8px;
   width: 100%;
 }
 
+.input-wrapper:not(:last-child) {
+  margin-bottom: 0;
+}
+
 .input-label {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
-  color: var(--text-primary);
-  line-height: 1.5;
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #99A1AF;
+  letter-spacing: 0px;
 }
 
 .input-container {
@@ -22,31 +28,44 @@
 
 .input-field {
   width: 100%;
-  padding: var(--spacing-md) var(--spacing-lg);
-  background-color: var(--bg-input);
-  border: 1px solid var(--border-input);
-  border-radius: var(--radius-md);
+  height: 42px;
+  padding: 12px 16px;
+  background-color: rgba(224, 161, 48, 0.05);
+  border: 1px solid rgba(224, 161, 48, 0.2);
+  border-radius: 8px;
   color: var(--text-primary);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
-  line-height: 1.5;
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
   transition: all 0.2s ease;
   outline: none;
+  box-sizing: border-box;
 }
 
 /* Add padding when toggle button is present (toggle comes after input) */
 .input-container:has(.input-toggle) .input-field {
   padding-right: 48px;
+  padding-left: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .input-field::placeholder {
-  color: var(--text-placeholder);
+  color: #4B4B4B;
   opacity: 1;
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
 }
 
 .input-field:focus {
-  border-color: var(--border-secondary);
-  box-shadow: 0 0 0 2px rgba(108, 189, 69, 0.1);
+  border-color: rgba(224, 161, 48, 0.4);
+  background-color: rgba(224, 161, 48, 0.08);
+  outline: none;
 }
 
 .input-field:disabled {

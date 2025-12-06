@@ -20,10 +20,10 @@
   bottom: 0;
   background-color: var(--bg-secondary);
   background-image: url('../../assets/images/bg_log.png');
-  background-size: 70% auto;
-  background-position: center right;
+  background-size: 65% auto;
+  background-position: right center;
   background-repeat: no-repeat;
-  opacity: 0.15;
+  opacity: 0.25;
   z-index: 0;
 }
 
@@ -34,7 +34,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 88, 41, 0.2) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(0, 88, 41, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
   z-index: 1;
 }
 
@@ -73,7 +73,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: var(--spacing-md);
+  gap: 12px;
 }
 
 .checkbox-wrapper {
@@ -95,15 +95,21 @@
 }
 
 .checkbox-label {
-  font-size: var(--font-size-sm);
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
   color: var(--text-primary);
-  font-weight: var(--font-weight-normal);
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
 }
 
 .forgot-password-link {
-  font-size: var(--font-size-sm);
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
   color: var(--text-link);
-  font-weight: var(--font-weight-normal);
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
   transition: color 0.2s ease;
 }
 
@@ -117,8 +123,11 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
-  font-size: var(--font-size-sm);
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
   color: var(--text-primary);
+  line-height: 18px;
+  letter-spacing: 0px;
 }
 
 .signup-text {
@@ -150,9 +159,15 @@
     padding: var(--spacing-lg);
   }
 
+  .login-page::before {
+    background-size: 80% auto;
+    opacity: 0.2;
+  }
+
   .modal {
     max-width: 100%;
     padding: var(--spacing-lg);
+    min-height: auto;
   }
 
   .form-options {
@@ -180,9 +195,15 @@
     padding: var(--spacing-md);
   }
 
+  .login-page::before {
+    background-size: 100% auto;
+    opacity: 0.15;
+  }
+
   .modal {
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
+    min-height: auto;
   }
 
   .logo {
@@ -197,6 +218,10 @@
   .btn-social {
     width: 40px;
     height: 40px;
+  }
+
+  .modal-title {
+    font-size: var(--font-size-base);
   }
 }
 

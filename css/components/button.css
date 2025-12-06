@@ -5,9 +5,11 @@
   justify-content: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-md) var(--spacing-xl);
+  font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   line-height: 1.5;
+  letter-spacing: 0px;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
@@ -31,9 +33,14 @@
 /* Primary Button (Sign In) */
 .btn-primary {
   background-color: var(--color-dark-green);
-  border-color: var(--color-light-green);
+  border: 1px solid var(--color-light-green);
   color: var(--text-primary);
   height: 48px;
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
 }
 
 .btn-primary:hover:not(:disabled) {
