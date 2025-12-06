@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Alpha Gold Trading</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar__header">
+      <div class="logo">
+        <div class="logo__icon">A</div>
+        <div class="logo__text">
+          <span class="logo__text--green">ALPHA</span>
+          <span class="logo__text--gold">GOLD TRADING</span>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="sidebar__nav">
+      <ul class="nav-list">
+        <li class="nav-item nav-item--active">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="12" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="2" y="12" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="12" y="12" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span class="nav-link__text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.6667 2L6.66667 11.6667H10L8.33333 18L13.3333 8.33333H10L11.6667 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav-link__text">Activation</span>
+            <span class="nav-link__arrow">→</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 10C12.7614 10 15 7.76142 15 5C15 2.23858 12.7614 0 10 0C7.23858 0 5 2.23858 5 5C5 7.76142 7.23858 10 10 10Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M2.5 20C2.5 15.5817 6.08172 12 10.5 12H9.5C13.9183 12 17.5 15.5817 17.5 20" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span class="nav-link__text">Partner Program</span>
+            <span class="nav-link__arrow">→</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2L4 5V9C4 13 7 16 10 17C13 16 16 13 16 9V5L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="nav-link__text">Profile Settings</span>
+            <span class="nav-link__arrow">→</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 2H12L15 5V16H5V2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2V5H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 8H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M7 11H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M7 14H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="nav-link__text">Terms & Conditions</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <button class="sidebar__toggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 4L12 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar__title">
+      <h1>Dashboard</h1>
+    </div>
+    
+    <div class="navbar__user">
+      <div class="user-profile">
+        <div class="user-profile__info">
+          <div class="user-profile__name">Alex Morgan</div>
+          <div class="user-profile__badge">Pro Account</div>
+        </div>
+        <div class="user-profile__avatar">
+          <img src="https://ui-avatars.com/api/?name=Alex+Morgan&background=E0A130&color=fff&size=40" alt="Alex Morgan" />
+        </div>
+      </div>
+      
+      <button class="btn-logout">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 2H4C2.89543 2 2 2.89543 2 4V16C2 17.1046 2.89543 18 4 18H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M13 14L18 10L13 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 10H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="dashboard">
+    <div class="dashboard__container">
+      <!-- Top Row -->
+      <div class="dashboard__row">
+        <!-- Monthly Performance Card -->
+        <div class="card card--chart">
+          <div class="card__header">
+            <h3 class="card__title">Monthly Performance</h3>
+            <p class="card__subtitle">Revenue vs Profit Analysis</p>
+          </div>
+          <div class="card__body">
+            <div class="chart-legend">
+              <div class="chart-legend__item">
+                <span class="chart-legend__dot chart-legend__dot--revenue"></span>
+                <span class="chart-legend__label">Revenue</span>
+              </div>
+              <div class="chart-legend__item">
+                <span class="chart-legend__dot chart-legend__dot--profit"></span>
+                <span class="chart-legend__label">Profit</span>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="monthlyChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Win Rate Card -->
+        <div class="card card--winrate">
+          <div class="card__header">
+            <h3 class="card__title">Win Rate</h3>
+            <p class="card__subtitle">Monthly Drawdown &lt;20%</p>
+          </div>
+          <div class="card__body">
+            <div class="winrate-gauge">
+              <div class="winrate-gauge__circle">
+                <svg class="winrate-gauge__svg" viewBox="0 0 200 200">
+                  <circle
+                    class="winrate-gauge__bg"
+                    cx="100"
+                    cy="100"
+                    r="85"
+                    fill="none"
+                    stroke="rgba(224, 161, 48, 0.1)"
+                    stroke-width="20"
+                  />
+                  <circle
+                    class="winrate-gauge__progress"
+                    cx="100"
+                    cy="100"
+                    r="85"
+                    fill="none"
+                    stroke="var(--color-gold)"
+                    stroke-width="20"
+                    stroke-linecap="round"
+                    stroke-dasharray="534.07"
+                    stroke-dashoffset="10.68"
+                    transform="rotate(-90 100 100)"
+                  />
+                </svg>
+                <div class="winrate-gauge__content">
+                  <div class="winrate-gauge__value">98%</div>
+                  <div class="winrate-gauge__label">WIN RATIO</div>
+                </div>
+              </div>
+            </div>
+            <div class="winrate-metrics">
+              <div class="winrate-metric">
+                <div class="winrate-metric__label">Trades Taken</div>
+                <div class="winrate-metric__value">4,293</div>
+              </div>
+              <div class="winrate-metric">
+                <div class="winrate-metric__label">Profit Factor</div>
+                <div class="winrate-metric__value winrate-metric__value--green">3.42</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="dashboard__row">
+        <!-- Total Profit Card -->
+        <div class="metric-card">
+          <div class="metric-card__icon metric-card__icon--gold">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6312 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6312 13.6815 18 14.5717 18 15.5C18 16.4283 17.6312 17.3185 16.9749 17.9749C16.3185 18.6312 15.4283 19 14.5 19H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="metric-card__change">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>+12.5%</span>
+          </div>
+          <div class="metric-card__label">TOTAL PROFIT</div>
+          <div class="metric-card__value">$128,430.00</div>
+        </div>
+
+        <!-- Profit This Week Card -->
+        <div class="metric-card">
+          <div class="metric-card__icon metric-card__icon--green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 9H21M9 3V21" stroke="currentColor" stroke-width="2"/>
+              <path d="M7 15L10 12L13 15L17 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="metric-card__change">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>+8.2%</span>
+          </div>
+          <div class="metric-card__label">PROFIT THIS WEEK</div>
+          <div class="metric-card__value">$4,290.00</div>
+        </div>
+
+        <!-- Profit This Month Card -->
+        <div class="metric-card">
+          <div class="metric-card__icon metric-card__icon--green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="metric-card__change">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>+5.1%</span>
+          </div>
+          <div class="metric-card__label">PROFIT THIS MONTH</div>
+          <div class="metric-card__value">$18,530.00</div>
+        </div>
+      </div>
+    </div>
+  </main>
+<script>
