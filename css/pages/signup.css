@@ -1,0 +1,223 @@
+/* Signup Page Styles */
+.signup-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  overflow: hidden;
+}
+
+.signup-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/images/Background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.signup-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Signup Card - Matching Figma specs */
+.signup-card {
+  position: relative;
+  background-color: #050B08;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: auto;
+  isolation: isolate;
+}
+
+/* Gradient Border using pseudo-element technique */
+.signup-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6CBD45 0%, #325720 50%, #00FF9C 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.signup-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 13px;
+  background-color: #050B08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.signup-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.signup-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 203px;
+  height: 50px;
+}
+
+.signup-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.signup-title {
+  font-family: 'Eurostile-Bold', 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #E0A130;
+  text-align: center;
+  letter-spacing: 0px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-form {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.signup-body {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Row 1: Username, Full Name, Email - each spans 2 columns (3 items = 6 columns total) */
+.signup-body .input-wrapper:nth-child(1),
+.signup-body .input-wrapper:nth-child(2),
+.signup-body .input-wrapper:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* Row 2: Password and Confirm Password - each spans 3 columns (2 items = 6 columns total) */
+.signup-body .input-wrapper:nth-child(4),
+.signup-body .input-wrapper:nth-child(5) {
+  grid-column: span 3;
+}
+
+/* Row 3: Address - full width (spans all 6 columns) */
+.signup-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Row 4: Mobile and Referral Code - each spans 3 columns (2 items = 6 columns total) */
+.signup-body .input-wrapper:nth-child(7),
+.signup-body .input-wrapper:nth-child(8) {
+  grid-column: span 3;
+}
+
+/* Full width elements in grid */
+.signup-body .checkbox-wrapper,
+.signup-body .signup-actions {
+  grid-column: 1 / -1;
+}
+
+/* Signup Actions Container - Matching Figma specs */
+.signup-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 300px;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.signup-actions .btn-primary {
+  width: 100%;
+}
+
+.signup-actions .signup-prompt {
+  width: fit-content;
+}
+
+/* Responsive: Stack columns on smaller screens */
+@media (max-width: 1200px) {
+  .signup-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-page {
+    padding: var(--spacing-lg);
+  }
+
+  .signup-body {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  /* Reset all column spans on mobile */
+  .signup-body .input-wrapper {
+    grid-column: span 1 !important;
+  }
+  
+  .signup-card {
+    max-width: 100%;
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-page {
+    padding: var(--spacing-md);
+  }
+
+  .signup-card {
+    padding: var(--spacing-md);
+    border-radius: 8px;
+  }
+}
+

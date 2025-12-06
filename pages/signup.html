@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Alpha Gold Trading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <div class="signup-page">
+    <div class="signup-container">
+      <!-- Sign Up Card -->
+      <div class="signup-card">
+        <!-- Logo -->
+        <div class="signup-header">
+          <div class="logo">
+            <img src="../assets/icons/alpha-logo.svg" alt="Alpha Gold Trading Logo" />
+          </div>
+          <h1 class="signup-title">Register</h1>
+        </div>
+
+        <!-- Form -->
+        <form class="signup-form">
+          <div class="signup-body">
+            <!-- Row 1: Username, Full Name, Email (3 columns) -->
+            <div class="input-wrapper">
+              <label for="username" class="input-label">Username</label>
+              <div class="input-container">
+                <input 
+                  type="text" 
+                  id="username" 
+                  name="username" 
+                  placeholder="Username" 
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="fullname" class="input-label">Full Name</label>
+              <div class="input-container">
+                <input 
+                  type="text" 
+                  id="fullname" 
+                  name="fullname" 
+                  placeholder="Enter your full name" 
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="email" class="input-label">Email Address</label>
+              <div class="input-container">
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="Enter your email address" 
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <!-- Row 2: Password and Confirm Password (2 columns) -->
+            <div class="input-wrapper">
+              <label for="password" class="input-label">Password</label>
+              <div class="input-container">
+                <input 
+                  type="password" 
+                  id="password" 
+                  name="password" 
+                  placeholder="Enter your password" 
+                  class="input-field"
+                />
+                <button type="button" class="input-toggle" aria-label="Toggle password visibility">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 4C6 4 2.73 6.11 1 9.5C2.73 12.89 6 15 10 15C14 15 17.27 12.89 19 9.5C17.27 6.11 14 4 10 4ZM10 12.5C8.07 12.5 6.5 10.93 6.5 9C6.5 7.07 8.07 5.5 10 5.5C11.93 5.5 13.5 7.07 13.5 9C13.5 10.93 11.93 12.5 10 12.5ZM10 7C8.62 7 7.5 8.12 7.5 9.5C7.5 10.88 8.62 12 10 12C11.38 12 12.5 10.88 12.5 9.5C12.5 8.12 11.38 7 10 7Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="confirm-password" class="input-label">Confirm Password</label>
+              <div class="input-container">
+                <input 
+                  type="password" 
+                  id="confirm-password" 
+                  name="confirm-password" 
+                  placeholder="Re-type your password" 
+                  class="input-field"
+                />
+                <button type="button" class="input-toggle" aria-label="Toggle password visibility">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 4C6 4 2.73 6.11 1 9.5C2.73 12.89 6 15 10 15C14 15 17.27 12.89 19 9.5C17.27 6.11 14 4 10 4ZM10 12.5C8.07 12.5 6.5 10.93 6.5 9C6.5 7.07 8.07 5.5 10 5.5C11.93 5.5 13.5 7.07 13.5 9C13.5 10.93 11.93 12.5 10 12.5ZM10 7C8.62 7 7.5 8.12 7.5 9.5C7.5 10.88 8.62 12 10 12C11.38 12 12.5 10.88 12.5 9.5C12.5 8.12 11.38 7 10 7Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Row 3: Address (full width) -->
+            <div class="input-wrapper signup-full-width">
+              <label for="address" class="input-label">Address</label>
+              <div class="input-container">
+                <input 
+                  type="text" 
+                  id="address" 
+                  name="address" 
+                  placeholder="Enter address" 
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <!-- Row 4: Mobile and Referral Code (2 columns) -->
+            <div class="input-wrapper">
+              <label for="mobile" class="input-label">Mobile</label>
+              <div class="input-container">
+                <input 
+                  type="tel" 
+                  id="mobile" 
+                  name="mobile" 
+                  placeholder="Enter your mobile number" 
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="referral" class="input-label">Referral Code (Optional)</label>
+              <div class="input-container">
+                <input 
+                  type="text" 
+                  id="referral" 
+                  name="referral" 
+                  placeholder="Enter referral code" 
+                  class="input-field"
+                />
+              </div>
+            </div>
+
+            <!-- Checkbox -->
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="checkout" name="checkout" class="checkbox-input">
+              <span class="checkbox-label">Check me out</span>
+            </label>
+
+            <!-- Sign Up Button and Sign In Link Container -->
+            <div class="signup-actions">
+              <button type="button" class="btn btn-primary btn-icon">
+                <span>Sign Up</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <!-- Sign In Link -->
+              <div class="signup-prompt">
+                <span class="signup-text">Already have an account?</span>
+                <a href="login.html" class="signup-link">Sign In</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

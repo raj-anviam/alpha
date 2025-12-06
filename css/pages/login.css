@@ -18,25 +18,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--bg-secondary);
-  background-image: url('../../assets/images/bg_log.png');
-  background-size: 65% auto;
-  background-position: right center;
+  background-image: url('../../assets/images/Background.svg');
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.25;
   z-index: 0;
 }
 
-.login-page::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 88, 41, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
-  z-index: 1;
-}
 
 .login-container {
   position: relative;
@@ -97,9 +85,9 @@
 .checkbox-label {
   font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
   font-size: 14px;
-  color: var(--text-primary);
+  color: #99A1AF;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 14px;
   letter-spacing: 0px;
 }
 
@@ -122,26 +110,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
+  gap: 6px;
   font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
   font-size: 14px;
-  color: var(--text-primary);
-  line-height: 18px;
+  line-height: 14px;
   letter-spacing: 0px;
+  height: 14px;
 }
 
 .signup-text {
-  color: var(--text-primary);
+  font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0px;
+  color: #99A1AF;
 }
 
 .signup-link {
-  color: var(--text-secondary);
-  font-weight: var(--font-weight-medium);
+  font-family: 'Eurostile-Bold', 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0px;
+  color: #E0A130;
+  text-decoration: underline;
+  text-decoration-style: solid;
   transition: color 0.2s ease;
 }
 
 .signup-link:hover {
-  color: var(--color-gold);
+  color: #E0A130;
   text-decoration: underline;
 }
 
@@ -149,8 +148,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-md);
-  width: 100%;
+  gap: 12px;
+  width: fit-content;
+  height: 40px;
+  margin: 0 auto;
 }
 
 /* Responsive Design */
@@ -212,10 +213,16 @@
   }
 
   .social-login {
-    gap: var(--spacing-sm);
+    gap: 12px;
+    height: 40px;
   }
 
   .btn-social {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-social svg {
     width: 40px;
     height: 40px;
   }
