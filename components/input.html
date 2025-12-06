@@ -1,0 +1,22 @@
+<!-- Input Component -->
+<div class="input-wrapper">
+  <label for="{{id}}" class="input-label">{{label}}</label>
+  <div class="input-container">
+    <input 
+      type="{{type}}" 
+      id="{{id}}" 
+      name="{{name}}" 
+      placeholder="{{placeholder}}" 
+      class="input-field"
+      {{#if required}}required{{/if}}
+    />
+    {{#if showToggle}}
+    <button type="button" class="input-toggle" aria-label="Toggle password visibility">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 4C6 4 2.73 6.11 1 9.5C2.73 12.89 6 15 10 15C14 15 17.27 12.89 19 9.5C17.27 6.11 14 4 10 4ZM10 12.5C8.07 12.5 6.5 10.93 6.5 9C6.5 7.07 8.07 5.5 10 5.5C11.93 5.5 13.5 7.07 13.5 9C13.5 10.93 11.93 12.5 10 12.5ZM10 7C8.62 7 7.5 8.12 7.5 9.5C7.5 10.88 8.62 12 10 12C11.38 12 12.5 10.88 12.5 9.5C12.5 8.12 11.38 7 10 7Z" fill="currentColor"/>
+      </svg>
+    </button>
+    {{/if}}
+  </div>
+</div>
+

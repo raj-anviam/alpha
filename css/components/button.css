@@ -1,0 +1,100 @@
+/* Button Component Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  outline: none;
+  width: 100%;
+}
+
+.btn:focus {
+  outline: 2px solid var(--border-secondary);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Primary Button (Sign In) */
+.btn-primary {
+  background-color: var(--color-dark-green);
+  border-color: var(--color-light-green);
+  color: var(--text-primary);
+  height: 48px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-dark-green-deep);
+  border-color: var(--color-light-green);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 88, 41, 0.3);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--border-primary);
+  color: var(--text-secondary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(224, 161, 48, 0.1);
+  border-color: var(--color-gold);
+}
+
+/* Social Media Button */
+.btn-social {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-social:hover:not(:disabled) {
+  background-color: rgba(224, 161, 48, 0.1);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.btn-social svg,
+.btn-social img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Button with Icon */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
