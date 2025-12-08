@@ -16,18 +16,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   background-image: url('../../assets/images/user-tree-background.png');
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid rgba(224, 161, 48, 0.4);
+  background-origin: border-box;
+  background-clip: border-box;
+  /* border: 1px solid rgba(224, 161, 48, 0.4); */
   border-radius: 14px;
-  min-height: 500px;
+  min-height: 55rem;
   position: relative;
+  overflow: hidden;
 }
 
 /* Page Header */
 .user-tree__header {
   display: flex;
+  margin: 1rem 0 0 1rem;
   flex-direction: column;
   gap: var(--spacing-sm);
   text-align: left;
@@ -109,25 +115,12 @@
     margin-left: 0;
     padding: var(--spacing-lg);
   }
-
-  .user-tree__container {
-    min-height: 400px;
-  }
-
-  .user-tree__empty-state {
-    width: 100%;
-    max-width: 445px;
-  }
 }
 
 @media (max-width: 768px) {
   .user-tree {
     margin-top: 60px;
     padding: var(--spacing-md);
-  }
-
-  .user-tree__container {
-    min-height: 350px;
   }
 
   .user-tree__title {
@@ -170,10 +163,6 @@
 @media (max-width: 480px) {
   .user-tree {
     padding: var(--spacing-sm);
-  }
-
-  .user-tree__container {
-    min-height: 300px;
   }
 
   .user-tree__title {

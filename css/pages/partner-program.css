@@ -9,7 +9,6 @@
 }
 
 .partner-program__container {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -47,7 +46,6 @@
   padding: 24px;
   position: relative;
   overflow: hidden;
-  max-width: 1112px;
   min-height: 274px;
   display: flex;
   flex-direction: column;
@@ -188,7 +186,6 @@
   border-radius: 14px;
   padding: var(--spacing-xl);
   box-shadow: 0 0 15px rgba(106, 194, 72, 0.15);
-  max-width: 1112px;
   min-height: 96px;
   display: flex;
   align-items: center;
