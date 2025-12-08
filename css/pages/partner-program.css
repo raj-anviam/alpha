@@ -1,0 +1,290 @@
+/* Partner Program Page Styles */
+.partner-program {
+  margin-left: 280px;
+  margin-top: 80px;
+  padding: var(--spacing-xl) var(--spacing-xl);
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-secondary);
+  font-family: 'Inter', var(--font-family-primary);
+}
+
+.partner-program__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Page Header */
+.partner-program__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.partner-program__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Inter', var(--font-family-primary);
+}
+
+.partner-program__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-light-green-bright);
+  margin: 0;
+  font-family: 'Inter', var(--font-family-primary);
+}
+
+/* Affiliate Card */
+.affiliate-card {
+  background-color: var(--bg-primary);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-light-green-bright);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(106, 194, 72, 0.15);
+}
+
+.affiliate-card__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.affiliate-card__left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  flex: 1;
+}
+
+.affiliate-card__icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.affiliate-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.affiliate-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.affiliate-card__heading {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Inter', var(--font-family-primary);
+}
+
+.affiliate-card__description {
+  font-size: var(--font-size-base);
+  color: var(--text-muted);
+  margin: 0;
+  font-family: 'Inter', var(--font-family-primary);
+  line-height: 1.5;
+}
+
+.affiliate-card__button {
+  flex-shrink: 0;
+  width: auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: rgba(106, 194, 72, 0.1);
+  border: 1px solid var(--color-light-green-bright);
+  color: var(--color-light-green-bright);
+  font-family: 'Inter', var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.2s ease;
+}
+
+.affiliate-card__button:hover {
+  background-color: rgba(106, 194, 72, 0.15);
+  border-color: var(--color-light-green-bright);
+  transform: translateY(-1px);
+}
+
+.affiliate-card__button svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+.affiliate-card__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 249px;
+  height: 272px;
+  opacity: 0.3;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.affiliate-card__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translate(20%, -10%);
+}
+
+/* Referral Card */
+.referral-card {
+  background-color: var(--bg-primary);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-light-green-bright);
+  box-shadow: 0 0 15px rgba(106, 194, 72, 0.15);
+}
+
+.referral-card__content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.referral-card__icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.referral-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.referral-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+}
+
+.referral-card__heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Inter', var(--font-family-primary);
+}
+
+.referral-card__description {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: 0;
+  font-family: 'Inter', var(--font-family-primary);
+}
+
+/* Sidebar Submenu Styles */
+.nav-sublist {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.nav-subitem {
+  position: relative;
+}
+
+.nav-sublink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 8px 16px;
+  color: var(--text-muted);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-primary);
+  width: 100%;
+}
+
+.nav-sublink:hover {
+  background-color: rgba(224, 161, 48, 0.05);
+  color: var(--text-primary);
+}
+
+.nav-subitem--active .nav-sublink {
+  color: var(--color-gold);
+}
+
+.nav-sublink__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.nav-sublink__dot--active {
+  background-color: var(--color-gold);
+}
+
+.nav-sublink__text {
+  flex: 1;
+  font-family: var(--font-family-primary);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .affiliate-card__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .affiliate-card__button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .affiliate-card__bg {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-program {
+    margin-left: 0;
+    padding: var(--spacing-lg);
+  }
+
+  .affiliate-card__left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .referral-card__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
