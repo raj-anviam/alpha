@@ -1,0 +1,408 @@
+/* Refer & Earn Page Styles */
+.refer-earn {
+  margin-left: 280px;
+  margin-top: 80px;
+  padding: var(--spacing-xl) var(--spacing-xl);
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-secondary);
+  font-family: var(--font-family-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.refer-earn__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative coins image */
+.refer-earn__coins {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.refer-earn__coins-image {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+/* Introduction Section */
+.refer-earn__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.refer-earn__title {
+  font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.4px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.refer-earn__description {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #99A1AF;
+  margin: 0;
+  max-width: 800px;
+}
+
+/* Cards Grid */
+.refer-earn__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.refer-earn-card--activity {
+  grid-column: 1 / -1;
+}
+
+/* Refer Earn Card */
+.refer-earn-card {
+  background-color: #050B08;
+  border-radius: 14px;
+  border: 1px solid rgba(224, 161, 48, 0.4);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 200px;
+  box-shadow: 0 0 20px 0 rgba(227, 183, 95, 0.15);
+}
+
+.refer-earn-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.refer-earn-card__header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.refer-earn-card__title {
+  font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: #E0A130;
+  margin: 0;
+}
+
+.refer-earn-card__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.refer-earn-card__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  margin-top: 0;
+}
+
+/* Special layout for Total Revenue card - content below icon */
+.refer-earn-card__content--revenue {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.refer-earn-card__content--revenue .refer-earn-card__text {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.refer-earn-card__icon-badge {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(30, 41, 57, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(106, 114, 130, 0.2);
+}
+
+/* Icon badge in header (for Total Revenue card) */
+.refer-earn-card__header .refer-earn-card__icon-badge {
+  margin-bottom: 0;
+}
+
+.refer-earn-card__icon-badge svg {
+  width: 48px;
+  height: 48px;
+}
+
+.refer-earn-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.refer-earn-card__description {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #99A1AF;
+  margin: 0;
+}
+
+.refer-earn-card__subtext {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #6A7282;
+  margin: 0;
+}
+
+.refer-earn-card__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.refer-earn-card__status svg {
+  width: 20px;
+  height: 20px;
+}
+
+.refer-earn-card__status span {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--color-gold);
+}
+
+.refer-earn-card__status-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: rgba(224, 161, 48, 0.1);
+  border: 1px solid var(--color-gold);
+  border-radius: 6px;
+}
+
+.refer-earn-card__status-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.refer-earn-card__status-badge span {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--color-gold);
+}
+
+.refer-earn-card__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: auto;
+}
+
+.refer-earn-card__image {
+  width: auto;
+  height: 28px;
+  display: block;
+  object-fit: contain;
+}
+
+.refer-earn-card__label {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  color: #99A1AF;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: left;
+}
+
+.refer-earn-card__amount {
+  font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: -0.75px;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .refer-earn {
+    margin-left: 0;
+    padding: var(--spacing-lg);
+  }
+
+  .refer-earn__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .refer-earn-card--activity {
+    grid-column: 1;
+  }
+
+  .refer-earn__coins {
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+  }
+
+  .refer-earn__coins-image {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .refer-earn {
+    margin-top: 60px;
+    padding: var(--spacing-md);
+  }
+
+  .refer-earn__coins {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+
+  .refer-earn__coins-image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .refer-earn__title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .refer-earn__description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .refer-earn-card {
+    padding: 20px;
+  }
+
+  .refer-earn-card__title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .refer-earn-card__amount {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .refer-earn-card__content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .refer-earn-card__text {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .refer-earn {
+    padding: var(--spacing-sm);
+  }
+
+  .refer-earn__coins {
+    display: none;
+  }
+
+  .refer-earn__intro {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .refer-earn__title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .refer-earn-card {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .refer-earn-card__icon-badge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .refer-earn-card__icon-badge svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .refer-earn-card__amount {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .refer-earn-card__content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .refer-earn-card__text {
+    align-items: flex-start;
+  }
+}
+

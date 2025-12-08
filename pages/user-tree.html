@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Partner Program - Alpha Gold Trading</title>
+  <title>User Tree - Alpha Gold Trading</title>
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/user-tree.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -109,11 +110,11 @@
             </span>
           </a>
           <ul class="nav-sub-list">
-            <li class="nav-sub-item nav-sub-item--active">
+            <li class="nav-sub-item">
               <a href="partner-program.html" class="nav-sub-link">
                 <span class="nav-sub-link__icon">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="2.5" fill="#E0A130"/>
+                    <circle cx="10" cy="10" r="2.5" fill="#CACACA"/>
                   </svg>
                 </span>
                 <span class="nav-sub-link__text">Affiliate Program</span>
@@ -129,11 +130,11 @@
                 <span class="nav-sub-link__text">Refer & Earn</span>
               </a>
             </li>
-            <li class="nav-sub-item">
+            <li class="nav-sub-item nav-sub-item--active">
               <a href="user-tree.html" class="nav-sub-link">
                 <span class="nav-sub-link__icon">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="2.5" fill="#CACACA"/>
+                    <circle cx="10" cy="10" r="2.5" fill="#E0A130"/>
                   </svg>
                 </span>
                 <span class="nav-sub-link__text">User Tree</span>
@@ -176,7 +177,7 @@
     
     <button class="sidebar__toggle" aria-label="Toggle sidebar">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12.5 15L7.5 10L12.5 5" stroke="#E0A130" stroke-width="1.66587" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 4L12 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
   </aside>
@@ -213,65 +214,28 @@
   </header>
 
   <!-- Main Content -->
-  <main class="partner-program">
-    <div class="partner-program__container">
+  <main class="user-tree">
+    <div class="user-tree__container">
       <!-- Page Header -->
-      <!-- <div class="partner-program__header">
-        <h2 class="partner-program__title">Partner Program</h2>
-        <p class="partner-program__subtitle">Join our exclusive affiliate network</p>
-      </div> -->
-
-      <!-- Affiliate Program Card -->
-      <div class="affiliate-card">
-        <div class="affiliate-card__content">
-          <div class="affiliate-card__left">
-            <div class="affiliate-card__icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26.6663 34.9996V31.6662C26.6663 29.8981 25.964 28.2024 24.7137 26.9522C23.4635 25.702 21.7678 24.9996 19.9997 24.9996H9.99967C8.23156 24.9996 6.53587 25.702 5.28563 26.9522C4.03539 28.2024 3.33301 29.8981 3.33301 31.6662V34.9996" stroke="#E0A130" stroke-width="3.33328" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M26.666 5.21326C28.0956 5.58387 29.3617 6.4187 30.2655 7.58669C31.1693 8.75469 31.6597 10.1897 31.6597 11.6666C31.6597 13.1434 31.1693 14.5785 30.2655 15.7465C29.3617 16.9145 28.0956 17.7493 26.666 18.1199" stroke="#E0A130" stroke-width="3.33328" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M36.666 34.9996V31.6662C36.6649 30.1891 36.1733 28.7542 35.2683 27.5868C34.3633 26.4193 33.0962 25.5855 31.666 25.2162" stroke="#E0A130" stroke-width="3.33328" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14.9997 18.3333C18.6816 18.3333 21.6663 15.3486 21.6663 11.6667C21.6663 7.98477 18.6816 5 14.9997 5C11.3178 5 8.33301 7.98477 8.33301 11.6667C8.33301 15.3486 11.3178 18.3333 14.9997 18.3333Z" stroke="#E0A130" stroke-width="3.33328" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="affiliate-card__text">
-              <h3 class="affiliate-card__heading" id="affiliate-heading">Join our Affiliate Program!</h3>
-              <p class="affiliate-card__description" id="affiliate-description">Unlock exclusive rewards, earn commissions, and grow your network with AlphaGold.</p>
-            </div>
-            <button class="affiliate-card__button" id="submit-request-btn">
-              <span id="button-text">Submit Request</span>
-              <svg id="button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="affiliate-card__bg">
-          <img src="../assets/images/partner-program-bg.svg" alt="Background decoration" />
-        </div>
+      <div class="user-tree__header">
+        <h2 class="user-tree__title">User Tree</h2>
+        <p class="user-tree__subtitle">Your Downline Structure</p>
       </div>
 
-      <!-- Referral Code Card -->
-      <div class="referral-card" id="referral-card">
-        <div class="referral-card__content">
-          <div class="referral-card__icon" id="referral-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <mask id="path-1-inside-1_322_2772" fill="white">
-                <path d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z"/>
-              </mask>
-              <path d="M0 10C0 4.47715 4.47715 0 10 0H38C43.5229 0 48 4.47715 48 10V38C48 43.5229 43.5228 48 38 48H10C4.47715 48 0 43.5228 0 38V10Z" fill="#1E2939" fill-opacity="0.5"/>
-              <path d="M10 0V1.18025H38V0V-1.18025H10V0ZM48 10H46.8198V38H48H49.1802V10H48ZM38 48V46.8198H10V48V49.1802H38V48ZM0 38H1.18025V10H0H-1.18025V38H0ZM10 48V46.8198C5.12899 46.8198 1.18025 42.871 1.18025 38H0H-1.18025C-1.18025 44.1747 3.82532 49.1802 10 49.1802V48ZM48 38H46.8198C46.8198 42.871 42.871 46.8198 38 46.8198V48V49.1802C44.1747 49.1802 49.1802 44.1747 49.1802 38H48ZM38 0V1.18025C42.871 1.18025 46.8198 5.12899 46.8198 10H48H49.1802C49.1802 3.82532 44.1747 -1.18025 38 -1.18025V0ZM10 0V-1.18025C3.82532 -1.18025 -1.18025 3.82532 -1.18025 10H0H1.18025C1.18025 5.12899 5.12899 1.18025 10 1.18025V0Z" fill="#364153" mask="url(#path-1-inside-1_322_2772)"/>
-              <path d="M31 22.9964H17C15.8954 22.9964 15 23.8915 15 24.9957V31.9935C15 33.0977 15.8954 33.9928 17 33.9928H31C32.1046 33.9928 33 33.0977 33 31.9935V24.9957C33 23.8915 32.1046 22.9964 31 22.9964Z" stroke="#6A7282" stroke-width="1.99935" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M19 22.9964V18.9977C19 17.6721 19.5268 16.4007 20.4645 15.4633C21.4021 14.5259 22.6739 13.9993 24 13.9993C25.3261 13.9993 26.5979 14.5259 27.5355 15.4633C28.4732 16.4007 29 17.6721 29 18.9977V22.9964" stroke="#6A7282" stroke-width="1.99935" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="referral-card__text">
-            <h3 class="referral-card__heading" id="referral-heading">Your Referral Code</h3>
-            <p class="referral-card__description" id="referral-code">Code will appear after approval</p>
-            <div class="referral-card__input-wrapper" id="referral-input-wrapper" style="display: none;">
-              <input type="text" class="referral-card__input" id="referral-code-input" placeholder="Enter referral code" />
-            </div>
-          </div>
+      <!-- Empty State -->
+      <div class="user-tree__empty-state">
+        <div class="user-tree__icon">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="30" height="30" rx="4" stroke="#E0A130" stroke-width="3" fill="none"/>
+            <rect x="45" y="70" width="30" height="30" rx="4" stroke="#E0A130" stroke-width="3" fill="none"/>
+            <rect x="70" y="70" width="30" height="30" rx="4" stroke="#E0A130" stroke-width="3" fill="none"/>
+            <line x1="35" y1="50" x2="60" y2="70" stroke="#E0A130" stroke-width="3" stroke-linecap="round"/>
+            <line x1="50" y1="50" x2="60" y2="70" stroke="#E0A130" stroke-width="3" stroke-linecap="round"/>
+            <line x1="50" y1="50" x2="85" y2="70" stroke="#E0A130" stroke-width="3" stroke-linecap="round"/>
+          </svg>
         </div>
+        <h3 class="user-tree__empty-title">No Active Partners</h3>
+        <p class="user-tree__empty-description">Your referral network is currently empty. Start inviting partners to see your structure grow here.</p>
       </div>
     </div>
   </main>
@@ -280,22 +244,12 @@
     // Handle Sidebar Toggle
     const sidebarToggle = document.querySelector('.sidebar__toggle');
     const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.querySelector('.partner-program');
+    const mainContent = document.querySelector('.user-tree');
     const navbar = document.querySelector('.navbar');
-    const toggleIcon = sidebarToggle ? sidebarToggle.querySelector('svg') : null;
     
     if (sidebarToggle && sidebar) {
       sidebarToggle.addEventListener('click', function() {
         const isCollapsed = sidebar.classList.toggle('sidebar--collapsed');
-        
-        // Rotate icon when sidebar is collapsed/expanded
-        if (toggleIcon) {
-          if (isCollapsed) {
-            toggleIcon.style.transform = 'rotate(180deg)';
-          } else {
-            toggleIcon.style.transform = 'rotate(0deg)';
-          }
-        }
         
         // Update main content and navbar margins when sidebar is collapsed
         if (isCollapsed) {
@@ -323,70 +277,6 @@
         }
       });
     }
-
-    // Handle Referral Card click to show input
-    const referralCard = document.getElementById('referral-card');
-    const referralInputWrapper = document.getElementById('referral-input-wrapper');
-    const referralCodeText = document.getElementById('referral-code');
-    const referralHeading = document.getElementById('referral-heading');
-
-    referralCard.addEventListener('click', function(e) {
-      // Don't trigger if clicking on the input itself
-      if (e.target.closest('.referral-card__input-wrapper')) {
-        return;
-      }
-      
-      // Only show input if application is not approved yet
-      if (!referralCodeText.classList.contains('approved')) {
-        referralInputWrapper.style.display = 'flex';
-        const input = document.getElementById('referral-code-input');
-        if (input) {
-          input.focus();
-        }
-      }
-    });
-
-    // Handle Submit Request button click
-    const submitBtn = document.getElementById('submit-request-btn');
-    const buttonText = document.getElementById('button-text');
-    const buttonIcon = document.getElementById('button-icon');
-    const referralCode = document.getElementById('referral-code');
-    const referralIcon = document.getElementById('referral-icon');
-    const affiliateHeading = document.getElementById('affiliate-heading');
-    const affiliateDescription = document.getElementById('affiliate-description');
-
-    submitBtn.addEventListener('click', function() {
-      // Update button text and icon
-      buttonText.textContent = 'Application Approved';
-      buttonIcon.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M15.4384 0.561423L6.95041 9.04942L3.41441 5.51342C3.03912 5.13841 2.53024 4.92783 1.9997 4.92802C1.46916 4.92821 0.960422 5.13914 0.585405 5.51442C0.210389 5.88971 -0.000187411 6.39859 1.25155e-07 6.92913C0.000187662 7.45967 0.211124 7.96841 0.586405 8.34342L5.39441 13.1514C5.59871 13.3558 5.84128 13.518 6.10826 13.6286C6.37525 13.7392 6.66141 13.7962 6.95041 13.7962C7.2394 13.7962 7.52556 13.7392 7.79255 13.6286C8.05953 13.518 8.3021 13.3558 8.5064 13.1514L18.2664 3.38942C18.6307 3.01222 18.8323 2.50701 18.8278 1.98262C18.8232 1.45823 18.6129 0.956602 18.242 0.585786C17.8712 0.21497 17.3696 0.00463244 16.8452 7.56053e-05C16.3208 -0.00448123 15.8156 0.197107 15.4384 0.561423Z" fill="#00FF9C"/>';
-      buttonIcon.setAttribute('viewBox', '0 0 19 14');
-      buttonIcon.setAttribute('width', '19');
-      buttonIcon.setAttribute('height', '14');
-      
-      // Disable button after approval
-      submitBtn.disabled = true;
-      submitBtn.style.cursor = 'not-allowed';
-      
-      // Get the referral code from input field
-      const referralCodeInput = document.getElementById('referral-code-input');
-      const submittedCode = referralCodeInput ? referralCodeInput.value.trim() : '';
-      
-      // Hide input field
-      if (referralInputWrapper) {
-        referralInputWrapper.style.display = 'none';
-      }
-      
-      // Update referral code with user-submitted value or default
-      referralCode.textContent = submittedCode || '322221';
-      referralCode.classList.add('approved');
-      
-      // Update referral icon to approved icon (star with tick on top)
-      referralIcon.innerHTML = '<svg width="48" height="48" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M18.1426 1.16973C18.8506 0.462678 19.7979 0.0466376 20.7975 0.00368951C21.7972 -0.0392586 22.7766 0.294005 23.5426 0.937731L23.7986 1.17173L27.5986 4.96973H32.9706C33.9795 4.96992 34.9509 5.35127 35.6905 6.0374C36.43 6.72354 36.883 7.66376 36.9586 8.66973L36.9706 8.96973V14.3417L40.7706 18.1417C41.4783 18.8498 41.8946 19.7975 41.9376 20.7976C41.9806 21.7977 41.6469 22.7776 41.0026 23.5437L40.7686 23.7977L36.9686 27.5977V32.9697C36.969 33.9789 36.5878 34.9509 35.9016 35.6908C35.2155 36.4308 34.275 36.884 33.2686 36.9597L32.9706 36.9697H27.6006L23.8006 40.7697C23.0926 41.4773 22.1449 41.8937 21.1448 41.9367C20.1447 41.9796 19.1648 41.646 18.3986 41.0017L18.1446 40.7697L14.3446 36.9697H8.97064C7.96149 36.9701 6.98951 36.5889 6.24955 35.9027C5.50958 35.2166 5.05633 34.276 4.98064 33.2697L4.97064 32.9697V27.5977L1.17064 23.7977C0.463032 23.0897 0.0466391 22.142 0.00368679 21.1419C-0.0392655 20.1417 0.294346 19.1619 0.938644 18.3957L1.17064 18.1417L4.97064 14.3417V8.96973C4.97083 7.96092 5.35219 6.98944 6.03832 6.2499C6.72445 5.51036 7.66468 5.05739 8.67064 4.98173L8.97064 4.96973H14.3426L18.1426 1.16973Z" fill="#00FF9C"/><g transform="translate(11.5, 14)"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.4384 0.561423L6.95041 9.04942L3.41441 5.51342C3.03912 5.13841 2.53024 4.92783 1.9997 4.92802C1.46916 4.92821 0.960422 5.13914 0.585405 5.51442C0.210389 5.88971 -0.000187411 6.39859 1.25155e-07 6.92913C0.000187662 7.45967 0.211124 7.96841 0.586405 8.34342L5.39441 13.1514C5.59871 13.3558 5.84128 13.518 6.10826 13.6286C6.37525 13.7392 6.66141 13.7962 6.95041 13.7962C7.2394 13.7962 7.52556 13.7392 7.79255 13.6286C8.05953 13.518 8.3021 13.3558 8.5064 13.1514L18.2664 3.38942C18.6307 3.01222 18.8323 2.50701 18.8278 1.98262C18.8232 1.45823 18.6129 0.956602 18.242 0.585786C17.8712 0.21497 17.3696 0.00463244 16.8452 7.56053e-05C16.3208 -0.00448123 15.8156 0.197107 15.4384 0.561423Z" fill="#00FF9C"/></g></svg>';
-      
-      // Update affiliate card heading and description
-      affiliateHeading.textContent = 'Affiliate Program';
-      affiliateDescription.textContent = 'Get exclusive rewards, earn commissions, and grow your network with Alpha Gold.';
-    });
   </script>
 </body>
 </html>

@@ -196,6 +196,16 @@
 .sidebar__toggle svg {
   width: 20px;
   height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Sidebar Collapsed State */
+.sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar--collapsed {
+  transform: translateX(-100%);
 }
 
 /* Sub-navigation styles */
