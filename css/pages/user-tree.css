@@ -65,13 +65,13 @@
 }
 
 .level-button {
-  padding: 12px 24px;
+  padding: 10px 35px;
   background-color: transparent;
   border: none;
   border-bottom: 2px solid transparent;
   color: #CACACA;
   font-family: 'Eurostile', var(--font-family-primary);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0px;
@@ -91,6 +91,8 @@
 .level-button--active {
   border-radius: 14px 14px 0 0;
   border: 1px solid #E0A130;
+  font-weight: 600;
+  color: #E0A130;
 }
 
 /* Table Container */
@@ -122,6 +124,7 @@
 
 .user-tree-table thead {
   background-color: #0A0F0C;
+  color: #00FF9C;
 }
 
 .user-tree-table th {
@@ -132,9 +135,10 @@
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0px;
-  color: #00FF9C;
+  color: #00FF9C 10%;
   border: 1px solid rgba(0, 255, 156, 0.2);
-  border-radius: 14px;
+  background-color: rgba(0, 255, 156, 0.05);
+  border-radius: 6px;
 }
 
 .user-tree-table tbody tr {
@@ -157,9 +161,9 @@
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0px;
-  color: #FFFFFF;
-  border: 1px solid rgba(113, 113, 130, 1);
-  border-radius: 14px;
+  color: rgba(153, 161, 175, 1);
+  border: 1px solid rgba(224, 161, 48, 0.1);
+  border-radius: 6px;
 }
 
 /* Empty State */

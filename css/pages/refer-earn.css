@@ -153,8 +153,6 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(30, 41, 57, 0.5);
-  border-radius: 8px;
-  border: 1px solid rgba(106, 114, 130, 0.2);
 }
 
 /* Icon badge in header (for Total Revenue card) */
