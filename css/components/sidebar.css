@@ -248,6 +248,15 @@
   background-color: rgba(224, 161, 48, 0.05);
 }
 
+.nav-sub-item--active .nav-sub-link__icon svg path {
+  fill: #E0A130 !important;
+}
+
+.nav-sub-item--active .nav-sub-link__icon svg path[fill-opacity="0.2"] {
+  fill: #E0A130 !important;
+  fill-opacity: 0.2;
+}
+
 .nav-sub-link__icon {
   display: flex;
   align-items: center;
