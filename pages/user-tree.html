@@ -278,31 +278,136 @@
 
   <!-- Main Content -->
   <main class="user-tree">
-          <!-- Page Header -->
-          <div class="user-tree__header">
-            <h2 class="user-tree__title">User Tree</h2>
-            <p class="user-tree__subtitle">Your Downline Structure</p>
-          </div>
+     <!-- Page Header -->
+    <div class="user-tree__header">
+      <h1 class="user-tree__title">User Tree</h1>
+      <p class="user-tree__subtitle">Your Downline Structure</p>
+    </div>
     <div class="user-tree__container">
+      <div class="user-tree__content">       
 
-      <!-- Empty State -->
-      <div class="user-tree__empty-state">
-        <div class="user-tree__icon">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M34.9993 26.6662H28.3327C27.4122 26.6662 26.666 27.4124 26.666 28.3328V34.9995C26.666 35.92 27.4122 36.6662 28.3327 36.6662H34.9993C35.9198 36.6662 36.666 35.92 36.666 34.9995V28.3328C36.666 27.4124 35.9198 26.6662 34.9993 26.6662Z" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M11.6663 26.6662H4.99967C4.0792 26.6662 3.33301 27.4124 3.33301 28.3328V34.9995C3.33301 35.92 4.0792 36.6662 4.99967 36.6662H11.6663C12.5868 36.6662 13.333 35.92 13.333 34.9995V28.3328C13.333 27.4124 12.5868 26.6662 11.6663 26.6662Z" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M23.3333 3.33328H16.6667C15.7462 3.33328 15 4.07947 15 4.99995V11.6666C15 12.5871 15.7462 13.3333 16.6667 13.3333H23.3333C24.2538 13.3333 25 12.5871 25 11.6666V4.99995C25 4.07947 24.2538 3.33328 23.3333 3.33328Z" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8.33301 26.6663V21.6663C8.33301 21.2243 8.5086 20.8004 8.82116 20.4878C9.13372 20.1753 9.55765 19.9997 9.99967 19.9997H29.9997C30.4417 19.9997 30.8656 20.1753 31.1782 20.4878C31.4907 20.8004 31.6663 21.2243 31.6663 21.6663V26.6663" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M20 19.9998V13.3331" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <!-- Level Tabs and Table Wrapper -->
+        <div class="user-tree-wrapper">
+          <!-- Level Selection Tabs -->
+          <div class="level-selection">
+            <button type="button" class="level-button level-button--active" data-level="1">
+              Level - 1
+            </button>
+            <button type="button" class="level-button" data-level="2">
+              Level - 2
+            </button>
+            <button type="button" class="level-button" data-level="3">
+              Level - 3
+            </button>
+          </div>
+
+          <!-- Table Container -->
+          <div class="user-tree-table-container" id="user-tree-table-container">
+            <!-- Table will be shown when data exists -->
+            <div class="user-tree-table-wrapper" id="user-tree-table-wrapper" style="display: none;">
+              <table class="user-tree-table">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Profile Name</th>
+                    <th>Referred By</th>
+                  </tr>
+                </thead>
+                <tbody id="user-tree-table-body">
+                  <!-- Table rows will be populated here -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Empty State -->
+            <div class="user-tree__empty-state" id="user-tree-empty-state">
+              <div class="user-tree__icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M34.9993 26.6662H28.3327C27.4122 26.6662 26.666 27.4124 26.666 28.3328V34.9995C26.666 35.92 27.4122 36.6662 28.3327 36.6662H34.9993C35.9198 36.6662 36.666 35.92 36.666 34.9995V28.3328C36.666 27.4124 35.9198 26.6662 34.9993 26.6662Z" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M11.6663 26.6662H4.99967C4.0792 26.6662 3.33301 27.4124 3.33301 28.3328V34.9995C3.33301 35.92 4.0792 36.6662 4.99967 36.6662H11.6663C12.5868 36.6662 13.333 35.92 13.333 34.9995V28.3328C13.333 27.4124 12.5868 26.6662 11.6663 26.6662Z" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M23.3333 3.33328H16.6667C15.7462 3.33328 15 4.07947 15 4.99995V11.6666C15 12.5871 15.7462 13.3333 16.6667 13.3333H23.3333C24.2538 13.3333 25 12.5871 25 11.6666V4.99995C25 4.07947 24.2538 3.33328 23.3333 3.33328Z" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8.33301 26.6663V21.6663C8.33301 21.2243 8.5086 20.8004 8.82116 20.4878C9.13372 20.1753 9.55765 19.9997 9.99967 19.9997H29.9997C30.4417 19.9997 30.8656 20.1753 31.1782 20.4878C31.4907 20.8004 31.6663 21.2243 31.6663 21.6663V26.6663" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20 19.9998V13.3331" stroke="#E0A130" stroke-width="2.49996" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="user-tree__empty-title">No Active Partners</h3>
+              <p class="user-tree__empty-description">Your referral network is currently empty. Start inviting partners to see your structure grow here.</p>
+            </div>
+          </div>
         </div>
-        <h3 class="user-tree__empty-title">No Active Partners</h3>
-        <p class="user-tree__empty-description">Your referral network is currently empty. Start inviting partners to see your structure grow here.</p>
       </div>
     </div>
   </main>
 
   <script>
+    // Sample data - Replace this with actual API call
+    const userTreeData = {
+      1: [
+        { username: 'wahhabjotsingh@gmail.com', profileName: 'Wahhabjot Singh', referredBy: 'Sarbjot1' },
+        { username: 'bharjana99', profileName: 'Parminder Singh', referredBy: 'Sarbjot1' },
+        { username: 'Sarbjot3', profileName: 'Waaris', referredBy: 'Sarbjot1' },
+        { username: 'SinghKing', profileName: 'Ravinder Kaur', referredBy: 'Sarbjot1' },
+        { username: 'amneetsihj6671@gmail.com', profileName: 'Amneet Singh', referredBy: 'wahhabjotsingh@gmail.com' },
+        { username: 'amneetsingh6671@gmail.com', profileName: 'Amneet singh', referredBy: 'wahhabjotsingh@gmail.com' },
+        { username: 'RamRam', profileName: 'Gurjit Singh', referredBy: 'SinghKing' },
+        { username: 'Waheguru', profileName: 'Manjit kaur', referredBy: 'SinghKing' }
+      ],
+      2: [],
+      3: []
+    };
+
+    // Level selection functionality
+    const levelButtons = document.querySelectorAll('.level-button');
+    const tableWrapper = document.getElementById('user-tree-table-wrapper');
+    const emptyState = document.getElementById('user-tree-empty-state');
+    const tableBody = document.getElementById('user-tree-table-body');
+
+    function loadLevelData(level) {
+      const data = userTreeData[level] || [];
+      
+      if (data.length > 0) {
+        // Show table, hide empty state
+        tableWrapper.style.display = 'block';
+        emptyState.style.display = 'none';
+        
+        // Clear existing rows
+        tableBody.innerHTML = '';
+        
+        // Populate table with data
+        data.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.username}</td>
+            <td>${user.profileName}</td>
+            <td>${user.referredBy}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } else {
+        // Show empty state, hide table
+        tableWrapper.style.display = 'none';
+        emptyState.style.display = 'flex';
+      }
+    }
+
+    levelButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        levelButtons.forEach(btn => btn.classList.remove('level-button--active'));
+        // Add active class to clicked button
+        button.classList.add('level-button--active');
+        
+        // Get the level from data attribute
+        const level = parseInt(button.getAttribute('data-level'));
+        
+        // Load data for selected level
+        loadLevelData(level);
+      });
+    });
+
+    // Load Level 1 data by default
+    loadLevelData(1);
+
     // Handle Sidebar Toggle
     const sidebarToggle = document.querySelector('.sidebar__toggle');
     const sidebar = document.querySelector('.sidebar');

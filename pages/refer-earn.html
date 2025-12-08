@@ -247,8 +247,8 @@
   <!-- Navbar -->
   <header class="navbar">
     <div class="navbar__title">
-      <h1 class="navbar__heading">Refer & Earn</h1>
-      <p class="navbar__subtitle">Invite your friends and enhance your trading experience</p>
+      <h1 class="navbar__heading">Partner Program</h1>
+      <p class="navbar__subtitle">Join our exclusive affiliate network</p>
     </div>
     
     <div class="navbar__user">
@@ -287,7 +287,7 @@
       <!-- Cards Grid -->
       <div class="refer-earn__cards">
         <!-- Referral Link Card -->
-        <div class="refer-earn-card">
+        <div class="refer-earn-card" id="referral-link-card">
           <div class="refer-earn-card__header">
             <div class="refer-earn-card__header-left">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="refer-earn-card__icon">
@@ -312,6 +312,16 @@
             <div class="refer-earn-card__text">
               <p class="refer-earn-card__description" id="referral-link-text">Link will appear after approval!</p>
               <p class="refer-earn-card__subtext">Once your partner request is approved, your unique referral link will be displayed here.</p>
+              <div class="refer-earn-card__input-wrapper" id="referral-link-input-wrapper" style="display: none;">
+                <input type="text" class="refer-earn-card__input" id="referral-link-input" value="https://myaccount.alphagoldtrading.com/index.php/auth/register/?sp=322221" readonly />
+                <button type="button" class="refer-earn-card__copy-btn" id="copy-link-btn" aria-label="Copy link">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.667 6.66663H8.33366C7.41318 6.66663 6.66699 7.41282 6.66699 8.33329V16.6666C6.66699 17.5871 7.41318 18.3333 8.33366 18.3333H16.667C17.5875 18.3333 18.3337 17.5871 18.3337 16.6666V8.33329C18.3337 7.41282 17.5875 6.66663 16.667 6.66663Z" stroke="#00FF9C" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.33366 13.3333C2.41699 13.3333 1.66699 12.5833 1.66699 11.6666V3.33329C1.66699 2.41663 2.41699 1.66663 3.33366 1.66663H11.667C12.5837 1.66663 13.3337 2.41663 13.3337 3.33329" stroke="#00FF9C" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  <span>Copy Link</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -390,6 +400,68 @@
             navbar.style.width = 'calc(100% - 280px)';
           }
         }
+      });
+    }
+        // Handle Referral Link Card click to show input
+        const referralLinkCard = document.getElementById('referral-link-card');
+    const referralLinkInputWrapper = document.getElementById('referral-link-input-wrapper');
+    const referralLinkText = document.getElementById('referral-link-text');
+    const referralLinkInput = document.getElementById('referral-link-input');
+    const referralLinkIcon = document.getElementById('referral-link-icon');
+    const referralLinkSubtext = document.querySelector('#referral-link-card .refer-earn-card__subtext');
+
+    if (referralLinkCard && referralLinkInputWrapper) {
+      referralLinkCard.addEventListener('click', function(e) {
+        // Don't trigger if clicking on the input wrapper itself
+        if (e.target.closest('.refer-earn-card__input-wrapper')) {
+          return;
+        }
+        
+        // Hide icon and paragraphs
+        if (referralLinkIcon) {
+          referralLinkIcon.style.display = 'none';
+        }
+        if (referralLinkText) {
+          referralLinkText.style.display = 'none';
+        }
+        if (referralLinkSubtext) {
+          referralLinkSubtext.style.display = 'none';
+        }
+        
+        // Show input field
+        referralLinkInputWrapper.style.display = 'flex';
+        if (referralLinkInput) {
+          referralLinkInput.focus();
+          referralLinkInput.select();
+        }
+      });
+    }
+
+    // Handle Copy Link button click
+    const copyLinkBtn = document.getElementById('copy-link-btn');
+    
+    if (copyLinkBtn && referralLinkInput) {
+      copyLinkBtn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent card click event
+        
+        referralLinkInput.select();
+        referralLinkInput.setSelectionRange(0, 99999); // For mobile devices
+        
+        navigator.clipboard.writeText(referralLinkInput.value).then(() => {
+          // Visual feedback - change icon to checkmark
+          const originalHTML = copyLinkBtn.innerHTML;
+          copyLinkBtn.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 4L6 11L3 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Copied!</span>
+          `;
+          setTimeout(() => {
+            copyLinkBtn.innerHTML = originalHTML;
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy:', err);
+        });
       });
     }
   </script>
