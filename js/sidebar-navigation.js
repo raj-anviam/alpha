@@ -118,14 +118,23 @@
 
       const targetPage = childMapping[pageInfo.child];
       if (targetPage) {
-        // Find child link by href
+        // Find child link by href - use exact match or end of path match
         const childLinks = document.querySelectorAll('.nav-sub-link');
         childLinks.forEach(link => {
           const href = link.getAttribute('href');
-          if (href && href.includes(targetPage)) {
-            const childItem = link.closest('.nav-sub-item');
-            if (childItem) {
-              childItem.classList.add('nav-sub-item--active');
+          if (href) {
+            // Normalize the href - remove leading ../ or ./
+            const normalizedHref = href.replace(/^\.\.\//, '').replace(/^\.\//, '');
+            // Extract just the filename from the href
+            const hrefFilename = normalizedHref.split('/').pop();
+            // Check if the filename matches the target page exactly
+            const matches = hrefFilename === targetPage;
+            
+            if (matches) {
+              const childItem = link.closest('.nav-sub-item');
+              if (childItem) {
+                childItem.classList.add('nav-sub-item--active');
+              }
             }
           }
         });

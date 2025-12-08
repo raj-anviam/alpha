@@ -409,7 +409,8 @@ Dashboard Page Styles
 
 @media (max-width: 768px) {
   .dashboard {
-    margin-left: 0;
+    margin-left: 0 !important;
+    margin-top: 68px;
     padding: var(--spacing-lg);
   }
   

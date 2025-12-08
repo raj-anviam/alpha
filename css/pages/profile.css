@@ -534,6 +534,11 @@
 
 /* Tablets */
 @media (max-width: 768px) {
+    .container {
+        margin-left: 0 !important;
+        margin-top: 68px;
+    }
+
     .profile-card {
         padding: 1.5rem;
     }

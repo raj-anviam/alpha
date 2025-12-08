@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="../js/sidebar-navigation.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/mobile-navbar.js"></script>
 </head>
 <body>
   <!-- Sidebar -->
@@ -54,7 +56,27 @@
               <a href="activation-create-account.html" class="nav-sub-link">
                 <span class="nav-sub-link__icon">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="2.5" fill="#CACACA"/>
+                    <g clip-path="url(#clip0_317_3451_act_tc)">
+                      <g filter="url(#filter0_d_317_3451_act_tc)">
+                        <path opacity="0.2" d="M16.25 10C16.25 11.2361 15.8834 12.4445 15.1967 13.4723C14.5099 14.5001 13.5338 15.3012 12.3918 15.7742C11.2497 16.2473 9.99307 16.3711 8.78069 16.1299C7.56831 15.8887 6.45466 15.2935 5.58058 14.4194C4.70651 13.5453 4.11125 12.4317 3.87009 11.2193C3.62894 10.0069 3.75271 8.75027 4.22576 7.60823C4.6988 6.46619 5.49988 5.49007 6.52769 4.80332C7.55549 4.11656 8.76387 3.75 10 3.75C11.6576 3.75 13.2473 4.40848 14.4194 5.58058C15.5915 6.75268 16.25 8.3424 16.25 10Z" fill="#CACACA"/>
+                        <path d="M12.5 10C12.5 10.4945 12.3534 10.9778 12.0787 11.3889C11.804 11.8 11.4135 12.1205 10.9567 12.3097C10.4999 12.4989 9.99723 12.5484 9.51227 12.452C9.02732 12.3555 8.58187 12.1174 8.23223 11.7678C7.8826 11.4181 7.6445 10.9727 7.54804 10.4877C7.45157 10.0028 7.50108 9.50011 7.6903 9.04329C7.87952 8.58648 8.19995 8.19603 8.61108 7.92133C9.0222 7.64662 9.50555 7.5 10 7.5C10.663 7.5 11.2989 7.76339 11.7678 8.23223C12.2366 8.70107 12.5 9.33696 12.5 10Z" fill="#CACACA"/>
+                      </g>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d_317_3451_act_tc" x="-1.25" y="-1.25" width="22.5" height="22.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="2.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.717647 0 0 0 0 0.372549 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_317_3451"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_317_3451" result="shape"/>
+                      </filter>
+                      <clipPath id="clip0_317_3451_act_tc">
+                        <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                    </defs>
                   </svg>
                 </span>
                 <span class="nav-sub-link__text">Create an Account</span>
@@ -64,7 +86,27 @@
               <a href="activation-start-trading.html" class="nav-sub-link">
                 <span class="nav-sub-link__icon">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="2.5" fill="#CACACA"/>
+                    <g clip-path="url(#clip0_317_3451_start_tc)">
+                      <g filter="url(#filter0_d_317_3451_start_tc)">
+                        <path opacity="0.2" d="M16.25 10C16.25 11.2361 15.8834 12.4445 15.1967 13.4723C14.5099 14.5001 13.5338 15.3012 12.3918 15.7742C11.2497 16.2473 9.99307 16.3711 8.78069 16.1299C7.56831 15.8887 6.45466 15.2935 5.58058 14.4194C4.70651 13.5453 4.11125 12.4317 3.87009 11.2193C3.62894 10.0069 3.75271 8.75027 4.22576 7.60823C4.6988 6.46619 5.49988 5.49007 6.52769 4.80332C7.55549 4.11656 8.76387 3.75 10 3.75C11.6576 3.75 13.2473 4.40848 14.4194 5.58058C15.5915 6.75268 16.25 8.3424 16.25 10Z" fill="#CACACA"/>
+                        <path d="M12.5 10C12.5 10.4945 12.3534 10.9778 12.0787 11.3889C11.804 11.8 11.4135 12.1205 10.9567 12.3097C10.4999 12.4989 9.99723 12.5484 9.51227 12.452C9.02732 12.3555 8.58187 12.1174 8.23223 11.7678C7.8826 11.4181 7.6445 10.9727 7.54804 10.4877C7.45157 10.0028 7.50108 9.50011 7.6903 9.04329C7.87952 8.58648 8.19995 8.19603 8.61108 7.92133C9.0222 7.64662 9.50555 7.5 10 7.5C10.663 7.5 11.2989 7.76339 11.7678 8.23223C12.2366 8.70107 12.5 9.33696 12.5 10Z" fill="#CACACA"/>
+                      </g>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d_317_3451_start_tc" x="-1.25" y="-1.25" width="22.5" height="22.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="2.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.717647 0 0 0 0 0.372549 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_317_3451"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_317_3451" result="shape"/>
+                      </filter>
+                      <clipPath id="clip0_317_3451_start_tc">
+                        <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                    </defs>
                   </svg>
                 </span>
                 <span class="nav-sub-link__text">Start Trading</span>
@@ -124,7 +166,27 @@
               <a href="terms_and_conditions.html" class="nav-sub-link">
                 <span class="nav-sub-link__icon">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="2.5" fill="#E0A130"/>
+                    <g clip-path="url(#clip0_317_3451_terms_tc)">
+                      <g filter="url(#filter0_d_317_3451_terms_tc)">
+                        <path opacity="0.2" d="M16.25 10C16.25 11.2361 15.8834 12.4445 15.1967 13.4723C14.5099 14.5001 13.5338 15.3012 12.3918 15.7742C11.2497 16.2473 9.99307 16.3711 8.78069 16.1299C7.56831 15.8887 6.45466 15.2935 5.58058 14.4194C4.70651 13.5453 4.11125 12.4317 3.87009 11.2193C3.62894 10.0069 3.75271 8.75027 4.22576 7.60823C4.6988 6.46619 5.49988 5.49007 6.52769 4.80332C7.55549 4.11656 8.76387 3.75 10 3.75C11.6576 3.75 13.2473 4.40848 14.4194 5.58058C15.5915 6.75268 16.25 8.3424 16.25 10Z" fill="#E0A130"/>
+                        <path d="M12.5 10C12.5 10.4945 12.3534 10.9778 12.0787 11.3889C11.804 11.8 11.4135 12.1205 10.9567 12.3097C10.4999 12.4989 9.99723 12.5484 9.51227 12.452C9.02732 12.3555 8.58187 12.1174 8.23223 11.7678C7.8826 11.4181 7.6445 10.9727 7.54804 10.4877C7.45157 10.0028 7.50108 9.50011 7.6903 9.04329C7.87952 8.58648 8.19995 8.19603 8.61108 7.92133C9.0222 7.64662 9.50555 7.5 10 7.5C10.663 7.5 11.2989 7.76339 11.7678 8.23223C12.2366 8.70107 12.5 9.33696 12.5 10Z" fill="#E0A130"/>
+                      </g>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d_317_3451_terms_tc" x="-1.25" y="-1.25" width="22.5" height="22.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="2.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.717647 0 0 0 0 0.372549 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_317_3451"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_317_3451" result="shape"/>
+                      </filter>
+                      <clipPath id="clip0_317_3451_terms_tc">
+                        <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                    </defs>
                   </svg>
                 </span>
                 <span class="nav-sub-link__text">Terms & Conditions</span>
@@ -134,7 +196,27 @@
               <a href="privacy.html" class="nav-sub-link">
                 <span class="nav-sub-link__icon">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10" cy="10" r="2.5" fill="#CACACA"/>
+                    <g clip-path="url(#clip0_317_3451_privacy_tc)">
+                      <g filter="url(#filter0_d_317_3451_privacy_tc)">
+                        <path opacity="0.2" d="M16.25 10C16.25 11.2361 15.8834 12.4445 15.1967 13.4723C14.5099 14.5001 13.5338 15.3012 12.3918 15.7742C11.2497 16.2473 9.99307 16.3711 8.78069 16.1299C7.56831 15.8887 6.45466 15.2935 5.58058 14.4194C4.70651 13.5453 4.11125 12.4317 3.87009 11.2193C3.62894 10.0069 3.75271 8.75027 4.22576 7.60823C4.6988 6.46619 5.49988 5.49007 6.52769 4.80332C7.55549 4.11656 8.76387 3.75 10 3.75C11.6576 3.75 13.2473 4.40848 14.4194 5.58058C15.5915 6.75268 16.25 8.3424 16.25 10Z" fill="#CACACA"/>
+                        <path d="M12.5 10C12.5 10.4945 12.3534 10.9778 12.0787 11.3889C11.804 11.8 11.4135 12.1205 10.9567 12.3097C10.4999 12.4989 9.99723 12.5484 9.51227 12.452C9.02732 12.3555 8.58187 12.1174 8.23223 11.7678C7.8826 11.4181 7.6445 10.9727 7.54804 10.4877C7.45157 10.0028 7.50108 9.50011 7.6903 9.04329C7.87952 8.58648 8.19995 8.19603 8.61108 7.92133C9.0222 7.64662 9.50555 7.5 10 7.5C10.663 7.5 11.2989 7.76339 11.7678 8.23223C12.2366 8.70107 12.5 9.33696 12.5 10Z" fill="#CACACA"/>
+                      </g>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d_317_3451_privacy_tc" x="-1.25" y="-1.25" width="22.5" height="22.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="2.5"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.890196 0 0 0 0 0.717647 0 0 0 0 0.372549 0 0 0 0.25 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_317_3451"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_317_3451" result="shape"/>
+                      </filter>
+                      <clipPath id="clip0_317_3451_privacy_tc">
+                        <rect width="20" height="20" fill="white"/>
+                      </clipPath>
+                    </defs>
                   </svg>
                 </span>
                 <span class="nav-sub-link__text">Privacy Policy</span>
@@ -154,6 +236,13 @@
 
   <!-- Navbar -->
   <header class="navbar">
+    <!-- Mobile Hamburger Menu -->
+    <button class="navbar__mobile-menu" id="mobile-menu-btn" aria-label="Toggle sidebar">
+      <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.66667 20C1.19445 20 0.798895 19.84 0.480006 19.52C0.161117 19.2 0.00111686 18.8044 5.74712e-06 18.3333C-0.00110536 17.8622 0.158895 17.4667 0.480006 17.1467C0.801117 16.8267 1.19667 16.6667 1.66667 16.6667H28.3333C28.8056 16.6667 29.2017 16.8267 29.5217 17.1467C29.8417 17.4667 30.0011 17.8622 30 18.3333C29.9989 18.8044 29.8389 19.2006 29.52 19.5217C29.2011 19.8428 28.8056 20.0022 28.3333 20H1.66667ZM1.66667 11.6667C1.19445 11.6667 0.798895 11.5067 0.480006 11.1867C0.161117 10.8667 0.00111686 10.4711 5.74712e-06 10C-0.00110536 9.52889 0.158895 9.13333 0.480006 8.81333C0.801117 8.49333 1.19667 8.33333 1.66667 8.33333L18.8333 8.33333C19.3056 8.33333 19.7017 8.49333 20.0217 8.81333C20.3417 9.13333 20.5011 9.52889 20.5 10C20.4989 10.4711 20.3389 10.8672 20.02 11.1883C19.7011 11.5094 19.3056 11.6689 18.8333 11.6667L1.66667 11.6667ZM1.66667 3.33333C1.19445 3.33333 0.798895 3.17333 0.480006 2.85333C0.161117 2.53333 0.00111686 2.13778 5.74712e-06 1.66667C-0.00110536 1.19556 0.158895 0.8 0.480006 0.48C0.801117 0.16 1.19667 0 1.66667 0H28.3333C28.8056 0 29.2017 0.16 29.5217 0.48C29.8417 0.8 30.0011 1.19556 30 1.66667C29.9989 2.13778 29.8389 2.53389 29.52 2.855C29.2011 3.17611 28.8056 3.33556 28.3333 3.33333H1.66667Z" fill="#E0A130"/>
+      </svg>
+    </button>
+
     <div class="navbar__title">
       <h1 class="navbar__heading">Company Policy - Terms & Conditions</h1>
     </div>
@@ -177,6 +266,39 @@
         </svg>
         <span>Logout</span>
       </button>
+
+      <!-- Mobile Three-Dot Menu -->
+      <button class="navbar__mobile-dots" id="mobile-dots-btn" aria-label="Open menu">
+        <svg width="8" height="28" viewBox="0 0 8 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 28C6.20914 28 8 26.2091 8 24C8 21.7909 6.20914 20 4 20C1.79086 20 0 21.7909 0 24C0 26.2091 1.79086 28 4 28Z" fill="#E0A130"/>
+          <path d="M4 18C6.20914 18 8 16.2091 8 14C8 11.7909 6.20914 10 4 10C1.79086 10 0 11.7909 0 14C0 16.2091 1.79086 18 4 18Z" fill="#E0A130"/>
+          <path d="M4 8C6.20914 8 8 6.20914 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8Z" fill="#E0A130"/>
+        </svg>
+      </button>
+
+      <!-- Mobile Dropdown Menu -->
+      <div class="navbar__mobile-dropdown" id="mobile-dropdown">
+        <div class="navbar__mobile-dropdown-item" id="mobile-profile-item">
+          <div class="user-profile">
+            <div class="user-profile__info">
+              <div class="user-profile__name">Alex Morgan</div>
+              <div class="user-profile__badge">Pro Account</div>
+            </div>
+            <div class="user-profile__avatar">
+              <img src="../assets/images/profile-image.jpg" alt="Alex Morgan" />
+            </div>
+          </div>
+        </div>
+        <div class="navbar__mobile-dropdown-item navbar__mobile-dropdown-item--profile-text">
+          Profile
+        </div>
+        <div class="navbar__mobile-dropdown-item navbar__mobile-dropdown-item--logout" id="mobile-logout-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.1345 10.0177H8.72863M8.72863 10.0177C8.72863 10.3777 10.0897 11.5884 10.0897 11.5884M8.72863 10.0177C8.72863 9.64758 10.0897 8.46084 10.0897 8.46084M6.8181 7.47053V12.5232M16 10C16 7.17179 16 5.75705 15.1215 4.87853C14.2429 4 12.8288 4 10 4C7.17179 4 5.75705 4 4.87853 4.87853C4 5.75705 4 7.17116 4 10C4 12.8282 4 14.2429 4.87853 15.1215C5.75705 16 7.17116 16 10 16C12.8282 16 14.2429 16 15.1215 15.1215C16 14.2429 16 12.8288 16 10Z" stroke="#FF3B30" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Logout</span>
+        </div>
+      </div>
     </div>
   </header>
 

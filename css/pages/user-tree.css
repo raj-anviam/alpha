@@ -237,7 +237,8 @@
 
 @media (max-width: 768px) {
   .user-tree {
-    margin-top: 60px;
+    margin-left: 0 !important;
+    margin-top: 68px;
     padding: var(--spacing-md);
   }
 

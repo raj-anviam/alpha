@@ -19,7 +19,7 @@
     min-height: calc(100vh - 80px);
     background-color: #000000;
     font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
-    width: calc(100% - 280px);
+    /* width: calc(100% - 280px); */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -238,6 +238,8 @@ footer p {
     }
 
     .container {
+        margin-left: 0 !important;
+        margin-top: 68px;
         padding: 1.5rem 1rem;
     }
 

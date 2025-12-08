@@ -52,6 +52,23 @@
   gap: 24px;
 }
 
+.affiliate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 249px;
+  height: 342px;
+  background-image: url('../../assets/images/Container.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+  transform: translate(20%, -10%);
+}
+
 .affiliate-card__content {
   position: relative;
   z-index: 2;
@@ -160,25 +177,6 @@
   stroke: currentColor;
 }
 
-/* Background SVG */
-.affiliate-card__bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 249px;
-  height: 342px;
-  opacity: 0.3;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.affiliate-card__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: translate(20%, -10%);
-}
 
 /* Referral Card - Figma Specs */
 .referral-card {
@@ -314,7 +312,8 @@
 
 @media (max-width: 768px) {
   .partner-program {
-    margin-left: 0;
+    margin-left: 0 !important;
+    margin-top: 68px;
     padding: var(--spacing-lg);
   }
 
