@@ -23,9 +23,8 @@
   background-repeat: no-repeat;
   background-origin: border-box;
   background-clip: border-box;
-  /* border: 1px solid rgba(224, 161, 48, 0.4); */
   border-radius: 14px;
-  min-height: 55rem;
+  min-height: 45rem;
   position: relative;
   overflow: hidden;
 }
