@@ -23,36 +23,25 @@
   margin-bottom: var(--spacing-lg);
 }
 
-/* .partner-program__title {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  margin: 0;
-  font-family: 'Inter', var(--font-family-primary);
-} */
-
-/* .partner-program__subtitle {
-  font-size: var(--font-size-base);
-  color: var(--color-light-green-bright);
-  margin: 0;
-  font-family: 'Inter', var(--font-family-primary);
-} */
-
 /* Affiliate Card - Figma Specs */
 .affiliate-card {
   background-color: #050B08;
   border-radius: 14px;
-  border: 1px solid var(--color-light-green-bright);
+  border: 1px solid rgba(0, 255, 156, 0.2);
+  background-image: url('../../assets/images/Container.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
   padding: 24px;
   position: relative;
   overflow: hidden;
-  min-height: 274px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.affiliate-card::before {
+/* .affiliate-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -60,14 +49,14 @@
   width: 249px;
   height: 342px;
   background-image: url('../../assets/images/Container.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: center;
   opacity: 0.3;
   z-index: 0;
   pointer-events: none;
   transform: translate(20%, -10%);
-}
+} */
 
 .affiliate-card__content {
   position: relative;
@@ -180,10 +169,11 @@
 
 /* Referral Card - Figma Specs */
 .referral-card {
-  background-color: #050B08;
+  background-color: #0A0F0C #000000;
+  background-image: linear-gradient(90deg, #000000 0%,  rgba(227, 183, 95, 0.05) 50%, #000000 100%);
   border-radius: 14px;
   padding: var(--spacing-xl);
-  box-shadow: 0 0 15px rgba(106, 194, 72, 0.15);
+  border: 1px solid rgba(224, 161, 48, 0.1);
   min-height: 96px;
   display: flex;
   align-items: center;
@@ -191,9 +181,10 @@
 
 .referral-card__content {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: var(--spacing-xl);
   width: 100%;
+  justify-content: space-between;
 }
 
 .referral-card__icon {
@@ -217,31 +208,41 @@
   flex: 1;
 }
 
-/* Heading - Figma Specs */
-.referral-card__heading {
+/* Code - First Line (Large, Bold, Orange-Yellow) */
+.referral-card__code {
   font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.4px;
-  color: var(--color-gold);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #E0A130;
   margin: 0;
+  order: 1;
 }
 
-/* Description - Figma Specs */
-.referral-card__description {
+.referral-card__code:not(.approved) {
   font-family: 'Eurostile', var(--font-family-primary);
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: 0px;
   color: #99A1AF;
+}
+
+/* Heading - Second Line (Smaller, Light Gray) */
+.referral-card__heading {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #E0A130;
   margin: 0;
-  margin-top: 0;
+  margin-top: 4px;
+  order: 1;
 }
 
 /* Approved state for referral code */
-.referral-card__description.approved {
+.referral-card__code.approved {
   font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
   font-size: 24px;
   font-weight: 700;
@@ -258,12 +259,12 @@
 }
 
 .referral-card:hover {
-  border-color: var(--color-light-green-bright);
+  border-color: rgba(224, 161, 48, 0.2);
 }
 
 .referral-card__input-wrapper {
   display: flex;
-  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
   width: 100%;
 }
 
@@ -289,6 +290,44 @@
 
 .referral-card__input::placeholder {
   color: #6A7282;
+}
+
+/* Copy Code Button */
+.referral-card__copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: rgba(0, 255, 156, 0.1);
+  border: 1px solid rgba(0, 255, 156, 0.5);
+  border-radius: 8px;
+  color: #00FF9C;
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.referral-card__copy-btn:hover {
+  background-color: rgba(0, 255, 156, 0.15);
+  border-color: rgba(0, 255, 156, 0.6);
+}
+
+.referral-card__copy-btn:active {
+  background-color: rgba(0, 255, 156, 0.2);
+  border-color: rgba(0, 255, 156, 0.7);
+}
+
+.referral-card__copy-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
 }
 
 /* Logo image styling */
@@ -358,9 +397,13 @@
   }
 
   .referral-card__content {
-    flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-lg);
+  }
+
+  .referral-card__copy-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 

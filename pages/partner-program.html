@@ -382,11 +382,6 @@
   <!-- Main Content -->
   <main class="partner-program">
     <div class="partner-program__container">
-      <!-- Page Header -->
-      <!-- <div class="partner-program__header">
-        <h2 class="partner-program__title">Partner Program</h2>
-        <p class="partner-program__subtitle">Join our exclusive affiliate network</p>
-      </div> -->
 
       <!-- Affiliate Program Card -->
       <div class="affiliate-card">
@@ -430,11 +425,18 @@
           </div>
           <div class="referral-card__text">
             <h3 class="referral-card__heading" id="referral-heading">Your Referral Code</h3>
-            <p class="referral-card__description" id="referral-code">Code will appear after approval</p>
+            <p class="referral-card__code" id="referral-code">Code will appear after approval</p>
             <div class="referral-card__input-wrapper" id="referral-input-wrapper" style="display: none;">
               <input type="text" class="referral-card__input" id="referral-code-input" placeholder="Enter referral code" />
             </div>
           </div>
+          <button class="referral-card__copy-btn" id="copy-code-btn" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.667 6.66663H8.33366C7.41318 6.66663 6.66699 7.41282 6.66699 8.33329V16.6666C6.66699 17.5871 7.41318 18.3333 8.33366 18.3333H16.667C17.5875 18.3333 18.3337 17.5871 18.3337 16.6666V8.33329C18.3337 7.41282 17.5875 6.66663 16.667 6.66663Z" stroke="#00FF9C" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.33366 13.3333C2.41699 13.3333 1.66699 12.5833 1.66699 11.6666V3.33329C1.66699 2.41663 2.41699 1.66663 3.33366 1.66663H11.667C12.5837 1.66663 13.3337 2.41663 13.3337 3.33329" stroke="#00FF9C" stroke-width="1.33239" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>              
+            <span>Copy Code</span>
+          </button>
         </div>
       </div>
     </div>
@@ -446,20 +448,10 @@
     const sidebar = document.querySelector('.sidebar');
     const mainContent = document.querySelector('.partner-program');
     const navbar = document.querySelector('.navbar');
-    const toggleIcon = sidebarToggle ? sidebarToggle.querySelector('svg') : null;
     
     if (sidebarToggle && sidebar) {
       sidebarToggle.addEventListener('click', function() {
         const isCollapsed = sidebar.classList.toggle('sidebar--collapsed');
-        
-        // Rotate icon when sidebar is collapsed/expanded
-        if (toggleIcon) {
-          if (isCollapsed) {
-            toggleIcon.style.transform = 'rotate(180deg)';
-          } else {
-            toggleIcon.style.transform = 'rotate(0deg)';
-          }
-        }
         
         // Update main content and navbar margins when sidebar is collapsed
         if (isCollapsed) {
@@ -493,10 +485,13 @@
     const referralInputWrapper = document.getElementById('referral-input-wrapper');
     const referralCodeText = document.getElementById('referral-code');
     const referralHeading = document.getElementById('referral-heading');
+    const copyBtn = document.getElementById('copy-code-btn');
 
     referralCard.addEventListener('click', function(e) {
-      // Don't trigger if clicking on the input itself
-      if (e.target.closest('.referral-card__input-wrapper')) {
+      // Don't trigger if clicking on the input, copy button, or icon
+      if (e.target.closest('.referral-card__input-wrapper') || 
+          e.target.closest('.referral-card__copy-btn') ||
+          e.target.closest('.referral-card__icon')) {
         return;
       }
       
@@ -541,16 +536,45 @@
       }
       
       // Update referral code with user-submitted value or default
-      referralCode.textContent = submittedCode || '322221';
+      const finalCode = submittedCode || '322221';
+      referralCode.textContent = finalCode;
       referralCode.classList.add('approved');
       
-      // Update referral icon to approved icon (star with tick on top)
+      // Show copy button
+      if (copyBtn) {
+        copyBtn.style.display = 'inline-flex';
+      }
+      
+      // Update referral icon to approved icon (star with checkmark)
       referralIcon.innerHTML = '<svg width="48" height="48" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M18.1426 1.16973C18.8506 0.462678 19.7979 0.0466376 20.7975 0.00368951C21.7972 -0.0392586 22.7766 0.294005 23.5426 0.937731L23.7986 1.17173L27.5986 4.96973H32.9706C33.9795 4.96992 34.9509 5.35127 35.6905 6.0374C36.43 6.72354 36.883 7.66376 36.9586 8.66973L36.9706 8.96973V14.3417L40.7706 18.1417C41.4783 18.8498 41.8946 19.7975 41.9376 20.7976C41.9806 21.7977 41.6469 22.7776 41.0026 23.5437L40.7686 23.7977L36.9686 27.5977V32.9697C36.969 33.9789 36.5878 34.9509 35.9016 35.6908C35.2155 36.4308 34.275 36.884 33.2686 36.9597L32.9706 36.9697H27.6006L23.8006 40.7697C23.0926 41.4773 22.1449 41.8937 21.1448 41.9367C20.1447 41.9796 19.1648 41.646 18.3986 41.0017L18.1446 40.7697L14.3446 36.9697H8.97064C7.96149 36.9701 6.98951 36.5889 6.24955 35.9027C5.50958 35.2166 5.05633 34.276 4.98064 33.2697L4.97064 32.9697V27.5977L1.17064 23.7977C0.463032 23.0897 0.0466391 22.142 0.00368679 21.1419C-0.0392655 20.1417 0.294346 19.1619 0.938644 18.3957L1.17064 18.1417L4.97064 14.3417V8.96973C4.97083 7.96092 5.35219 6.98944 6.03832 6.2499C6.72445 5.51036 7.66468 5.05739 8.67064 4.98173L8.97064 4.96973H14.3426L18.1426 1.16973Z" fill="#00FF9C"/><g transform="translate(11.5, 14)"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.4384 0.561423L6.95041 9.04942L3.41441 5.51342C3.03912 5.13841 2.53024 4.92783 1.9997 4.92802C1.46916 4.92821 0.960422 5.13914 0.585405 5.51442C0.210389 5.88971 -0.000187411 6.39859 1.25155e-07 6.92913C0.000187662 7.45967 0.211124 7.96841 0.586405 8.34342L5.39441 13.1514C5.59871 13.3558 5.84128 13.518 6.10826 13.6286C6.37525 13.7392 6.66141 13.7962 6.95041 13.7962C7.2394 13.7962 7.52556 13.7392 7.79255 13.6286C8.05953 13.518 8.3021 13.3558 8.5064 13.1514L18.2664 3.38942C18.6307 3.01222 18.8323 2.50701 18.8278 1.98262C18.8232 1.45823 18.6129 0.956602 18.242 0.585786C17.8712 0.21497 17.3696 0.00463244 16.8452 7.56053e-05C16.3208 -0.00448123 15.8156 0.197107 15.4384 0.561423Z" fill="#00FF9C"/></g></svg>';
       
       // Update affiliate card heading and description
       affiliateHeading.textContent = 'Affiliate Program';
       affiliateDescription.textContent = 'Get exclusive rewards, earn commissions, and grow your network with Alpha Gold.';
     });
+
+    // Handle Copy Code button click
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const codeToCopy = referralCode.textContent;
+        
+        // Copy to clipboard
+        navigator.clipboard.writeText(codeToCopy).then(function() {
+          // Visual feedback
+          const originalText = copyBtn.querySelector('span').textContent;
+          copyBtn.querySelector('span').textContent = 'Copied!';
+          copyBtn.style.backgroundColor = 'rgba(0, 255, 156, 0.2)';
+          
+          setTimeout(function() {
+            copyBtn.querySelector('span').textContent = originalText;
+            copyBtn.style.backgroundColor = 'rgba(0, 255, 156, 0.1)';
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy: ', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>

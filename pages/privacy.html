@@ -409,20 +409,10 @@
     const sidebar = document.querySelector('.sidebar');
     const mainContent = document.querySelector('.container');
     const navbar = document.querySelector('.navbar');
-    const toggleIcon = sidebarToggle ? sidebarToggle.querySelector('svg') : null;
     
     if (sidebarToggle && sidebar) {
       sidebarToggle.addEventListener('click', function() {
         const isCollapsed = sidebar.classList.toggle('sidebar--collapsed');
-        
-        // Rotate icon when sidebar is collapsed/expanded
-        if (toggleIcon) {
-          if (isCollapsed) {
-            toggleIcon.style.transform = 'rotate(180deg)';
-          } else {
-            toggleIcon.style.transform = 'rotate(0deg)';
-          }
-        }
         
         // Update main content and navbar margins when sidebar is collapsed
         if (isCollapsed) {

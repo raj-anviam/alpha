@@ -441,7 +441,15 @@
               </svg>
             </div>
             <div class="refer-earn-card__image-wrapper">
-              <img src="../assets/images/no-activity.png" alt="No activity" class="refer-earn-card__image">
+              <!-- <img src="../assets/images/no-activity.png" alt="No activity" class="refer-earn-card__image"> -->
+               <button class="refer-earn-card__image-wrapper-btn">
+                <span>
+                  <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.33301 9.91666H12.833V6.41666" stroke="#E0A130" stroke-width="0.998907" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12.8337 9.91668L7.87533 4.95834L4.95866 7.87501L1.16699 4.08334" stroke="#E0A130" stroke-width="0.998907" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span>View Activity</span></button>
             </div>
           </div>
           <div class="refer-earn-card__content refer-earn-card__content--revenue">
@@ -465,20 +473,10 @@
     const sidebar = document.querySelector('.sidebar');
     const mainContent = document.querySelector('.refer-earn');
     const navbar = document.querySelector('.navbar');
-    const toggleIcon = sidebarToggle ? sidebarToggle.querySelector('svg') : null;
     
     if (sidebarToggle && sidebar) {
       sidebarToggle.addEventListener('click', function() {
         const isCollapsed = sidebar.classList.toggle('sidebar--collapsed');
-        
-        // Rotate icon when sidebar is collapsed/expanded
-        if (toggleIcon) {
-          if (isCollapsed) {
-            toggleIcon.style.transform = 'rotate(180deg)';
-          } else {
-            toggleIcon.style.transform = 'rotate(0deg)';
-          }
-        }
         
         // Update main content and navbar margins when sidebar is collapsed
         if (isCollapsed) {

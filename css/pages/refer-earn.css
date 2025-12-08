@@ -15,14 +15,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
-  position: relative;
-  z-index: 1;
+
 }
 
 /* Decorative coins image */
 .refer-earn__coins {
-  position: absolute;
-  bottom: var(--spacing-xl);
+  position: fixed;
+  bottom: 5px;
   right: var(--spacing-xl);
   z-index: 0;
   pointer-events: none;
@@ -89,8 +88,9 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  min-height: 200px;
+  min-height: 148px;
   box-shadow: 0 0 20px 0 rgba(227, 183, 95, 0.15);
+  z-index: 1;
 }
 
 .refer-earn-card__header {
@@ -141,7 +141,6 @@
 }
 
 .refer-earn-card__content--revenue .refer-earn-card__text {
-  margin-top: 12px;
   width: 100%;
 }
 
@@ -237,13 +236,25 @@
   color: var(--color-gold);
 }
 
-.refer-earn-card__image-wrapper {
+.refer-earn-card__image-wrapper-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 8px;
-  border-radius: 6px;
-  margin-left: auto;
+  width: 10rem;
+  gap: 8px;
+  background-color: rgba(224, 161, 48, 0.1);
+  border: none;
+  cursor: pointer;
+  padding: 12px 6px 12px 6px;
+  border-radius: 50px;
+  margin: 0;
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #E0A130;
+  text-align: left;
 }
 
 .refer-earn-card__image {

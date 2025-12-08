@@ -1,4 +1,4 @@
-Dashboard Page Styles
+/* Dashboard Page Styles */
 .dashboard {
   margin-left: 280px;
   margin-top: 80px;
@@ -6,10 +6,10 @@ Dashboard Page Styles
   min-height: calc(100vh - 80px);
   background-color: var(--bg-secondary);
   font-family: 'Inter', var(--font-family-primary);
+  transition: margin-left 0.3s ease-in-out;
 }
 
 .dashboard__container {
-  /* max-width: 1400px; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -76,8 +76,9 @@ Dashboard Page Styles
 .card__header-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-lg);
+  flex-wrap: wrap;
 }
 
 .card__header-left {
@@ -85,6 +86,7 @@ Dashboard Page Styles
   flex-direction: column;
   gap: 4px;
   flex: 1;
+  min-width: 0;
 }
 
 .card__title {
@@ -116,9 +118,9 @@ Dashboard Page Styles
 .chart-legend {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   justify-content: flex-end;
   margin-bottom: 0;
   position: relative;
@@ -400,10 +402,63 @@ Dashboard Page Styles
   margin-top: 0;
 }
 
-/* Responsive */
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .dashboard__row:first-child {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
 @media (max-width: 1200px) {
-  .dashboard__row {
+  .dashboard__row:first-child {
     grid-template-columns: 1fr;
+  }
+
+  .dashboard__row:last-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    margin-left: 0;
+    margin-top: 68px;
+    padding: var(--spacing-lg);
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card--chart {
+    min-height: 380px;
+  }
+
+  .chart-container {
+    height: 380px;
+  }
+
+  .winrate-gauge__circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .winrate-gauge__ring::after {
+    transform-origin: 50% 90px;
+  }
+
+  .winrate-gauge__value {
+    font-size: 40px;
+  }
+
+  .metric-card {
+    min-height: 180px;
+    padding: var(--spacing-lg);
+  }
+
+  .metric-card__value {
+    font-size: 26px;
+    line-height: 32px;
   }
 }
 
@@ -411,40 +466,222 @@ Dashboard Page Styles
   .dashboard {
     margin-left: 0 !important;
     margin-top: 68px;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
-  
+
+  .dashboard__container {
+    gap: var(--spacing-lg);
+  }
+
+  .dashboard__row {
+    gap: var(--spacing-lg);
+  }
+
+  .dashboard__row:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card--chart {
+    min-height: 320px;
+  }
+
   .chart-container {
-    height: 300px;
+    height: 320px;
+  }
+
+  .card__header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .chart-legend {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .winrate-gauge {
+    margin: var(--spacing-lg) 0;
+  }
+
+  .winrate-gauge__circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .winrate-gauge__ring {
+    padding: 15px;
+    mask: radial-gradient(circle at center, transparent 55px, black 55px);
+    -webkit-mask: radial-gradient(circle at center, transparent 55px, black 55px);
+  }
+
+  .winrate-gauge__ring::after {
+    transform-origin: 50% 80px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .winrate-gauge__ring::before {
+    width: 16px;
+    height: 16px;
+  }
+
+  .winrate-gauge__value {
+    font-size: 36px;
+  }
+
+  .winrate-metrics {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .metric-card {
+    min-height: 160px;
+    padding: var(--spacing-md);
+  }
+
+  .metric-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .metric-card__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .metric-card__value {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .metric-card__label {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .card__title {
+    font-size: var(--font-size-md);
+  }
+
+  .card__subtitle {
+    font-size: 11px;
   }
 }
 
-/* Dashboard Page Styles */
-.dashboard {
-  margin-left: 280px;
-  margin-top: 68px;
-  padding: 24px;
-  min-height: calc(100vh - 68px);
-  background-color: #000000;
-}
-
-.dashboard__container {
-  max-width: 100%;
-  width: 100%;
-}
-
-.dashboard__row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-bottom: 24px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .dashboard {
-    margin-left: 0;
-    margin-top: 68px;
+    padding: var(--spacing-sm);
+  }
+
+  .dashboard__container {
+    gap: var(--spacing-md);
+  }
+
+  .dashboard__row {
+    gap: var(--spacing-md);
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card--chart {
+    min-height: 280px;
+  }
+
+  .chart-container {
+    height: 280px;
+  }
+
+  .winrate-gauge__circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .winrate-gauge__ring {
+    padding: 12px;
+    mask: radial-gradient(circle at center, transparent 50px, black 50px);
+    -webkit-mask: radial-gradient(circle at center, transparent 50px, black 50px);
+  }
+
+  .winrate-gauge__ring::after {
+    transform-origin: 50% 70px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .winrate-gauge__ring::before {
+    width: 14px;
+    height: 14px;
+  }
+
+  .winrate-gauge__value {
+    font-size: 32px;
+  }
+
+  .winrate-gauge__label {
+    font-size: 10px;
+  }
+
+  .metric-card {
+    min-height: 140px;
+    padding: var(--spacing-sm);
+  }
+
+  .metric-card__top {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .metric-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .metric-card__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .metric-card__value {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .metric-card__label {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .metric-card__change {
+    font-size: 11px;
+  }
+
+  .metric-card__change svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .card__title {
+    font-size: 16px;
+  }
+
+  .card__subtitle {
+    font-size: 10px;
+  }
+
+  .chart-legend__item {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .chart-legend__dot {
+    width: 6px;
+    height: 6px;
   }
 }
-

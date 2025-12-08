@@ -242,7 +242,8 @@
 .sidebar__toggle svg {
   width: 20px;
   height: 20px;
-  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg) !important;
+  transition: none;
 }
 
 /* Sidebar Collapsed State */

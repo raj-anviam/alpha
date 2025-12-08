@@ -129,16 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
           // Desktop/Tablet: toggle sidebar--collapsed
           const isCollapsed = sidebar.classList.toggle('sidebar--collapsed');
           adjustMainContent(isCollapsed);
-          
-          // Rotate icon when sidebar is collapsed/expanded (for desktop)
-          const toggleIcon = newToggle.querySelector('svg');
-          if (toggleIcon) {
-            if (isCollapsed) {
-              toggleIcon.style.transform = 'rotate(180deg)';
-            } else {
-              toggleIcon.style.transform = 'rotate(0deg)';
-            }
-          }
         }
         
         // Update hamburger visibility after toggle
