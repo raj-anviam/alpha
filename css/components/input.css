@@ -53,12 +53,12 @@
 }
 
 .input-field::placeholder {
-  color: #4B4B4B;
+  color: #717182;
   opacity: 1;
   font-family: 'Eurostile', 'Exo 2', 'Rajdhani', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 14px;
   letter-spacing: 0px;
 }
 

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Trading - Alpha Gold Trading</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar__header">
+      <div class="logo">
+        <img src="../assets/icons/alpha-logo.svg" alt="Alpha Gold Trading Logo" />
+      </div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="../pages/dashboard.html" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <rect x="12" y="2" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <rect x="2" y="12" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <rect x="12" y="12" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </span>
+            <span class="nav-link__text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item nav-item--active nav-item--expanded">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.78013 11.5996C3.63301 11.6001 3.48876 11.5577 3.36414 11.4772C3.23953 11.3967 3.13967 11.2816 3.07616 11.145C3.01265 11.0085 2.98811 10.8562 3.00537 10.7059C3.02264 10.5556 3.08101 10.4135 3.1737 10.2959L10.8708 2.13805C10.9285 2.06949 11.0072 2.02316 11.0939 2.00667C11.1806 1.99017 11.2702 2.00449 11.3479 2.04727C11.4257 2.09006 11.487 2.15876 11.5218 2.24211C11.5566 2.32545 11.5628 2.41849 11.5394 2.50595L10.0466 7.3207C10.0026 7.44189 9.98785 7.57225 10.0036 7.7006C10.0193 7.82896 10.065 7.95148 10.1369 8.05765C10.2088 8.16382 10.3046 8.25047 10.4162 8.31017C10.5277 8.36987 10.6517 8.40084 10.7775 8.40042H16.2199C16.367 8.3999 16.5112 8.44234 16.6359 8.5228C16.7605 8.60327 16.8603 8.71845 16.9238 8.85497C16.9873 8.9915 17.0119 9.14375 16.9946 9.29406C16.9774 9.44436 16.919 9.58654 16.8263 9.70408L9.12922 17.862C9.07148 17.9305 8.9928 17.9768 8.9061 17.9933C8.81939 18.0098 8.72981 17.9955 8.65205 17.9527C8.5743 17.9099 8.513 17.8412 8.4782 17.7579C8.44341 17.6745 8.4372 17.5815 8.46058 17.494L9.95335 12.6793C9.99737 12.5581 10.0122 12.4278 9.99643 12.2994C9.98071 12.171 9.93496 12.0485 9.86309 11.9424C9.79123 11.8362 9.6954 11.7495 9.58383 11.6898C9.47226 11.6301 9.34828 11.5992 9.22252 11.5996H3.78013Z"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="nav-link__text">Activation</span>
+            <span class="nav-link__arrow">
+              <svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.46428 10.5925L3.75011 15.3067L2.57178 14.1283L6.69678 10.0033L2.57178 5.87835L3.75011 4.70001L8.46428 9.41418C8.6205 9.57045 8.70827 9.78238 8.70827 10.0033C8.70827 10.2243 8.6205 10.4362 8.46428 10.5925Z"
+                  fill="#CACACA" />
+              </svg>
+            </span>
+          </a>
+          <ul class="nav-sub-list">
+            <li class="nav-sub-item">
+              <a href="activation-create-account.html" class="nav-sub-link">
+                <span class="nav-sub-link__icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_317_3451_act)">
+                      <g filter="url(#filter0_d_317_3451_act)">
+                        <path opacity="0.2"
+                          d="M16.25 10C16.25 11.2361 15.8834 12.4445 15.1967 13.4723C14.5099 14.5001 13.5338 15.3012 12.3918 15.7742C11.2497 16.2473 9.99307 16.3711 8.78069 16.1299C7.56831 15.8887 6.45466 15.2935 5.58058 14.4194C4.70651 13.5453 4.11125 12.4317 3.87009 11.2193C3.62894 10.0069 3.75271 8.75027 4.22576 7.60823C4.6988 6.46619 5.49988 5.49007 6.52769 4.80332C7.55549 4.11656 8.76387 3.75 10 3.75C11.6576 3.75 13.2473 4.40848 14.4194 5.58058C15.5915 6.75268 16.25 8.3424 16.25 10Z"
+                          fill="#E0A130" />
+                        <path
+                          d="M12.5 10C12.5 10.4945 12.3534 10.9778 12.0787 11.3889C11.804 11.8 11.4135 12.1205 10.9567 12.3097C10.4999 12.4989 9.99723 12.5484 9.51227 12.452C9.02732 12.3555 8.58187 12.1174 8.23223 11.7678C7.8826 11.4181 7.6445 10.9727 7.54804 10.4877C7.45157 10.0028 7.50108 9.50011 7.6903 9.04329C7.87952 8.58648 8.19995 8.19603 8.61108 7.92133C9.0222 7.64662 9.50555 7.5 10 7.5C10.663 7.5 11.2989 7.76339 11.7678 8.23223C12.2366 8.70107 12.5 9.33696 12.5 10Z"
+                          fill="#E0A130" />
+                      </g>
+                    </g>
+                    <defs>
+                      <filter id="filter0_d_317_3451_act" x="-1.25" y="-1.25" width="22.5" height="22.5"
+                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha" />
+                        <feOffset />
+                        <feGaussianBlur stdDeviation="2.5" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix type="matrix"
+                          values="0 0 0 0 0.890196 0 0 0 0 0.717647 0 0 0 0 0.372549 0 0 0 0.25 0" />
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_317_3451_act" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_317_3451_act"
+                          result="shape" />
+                      </filter>
+                      <clipPath id="clip0_317_3451_act">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <span class="nav-sub-link__text">Create an Account</span>
+              </a>
+            </li>
+            <li class="nav-sub-item nav-sub-item--active">
+              <a href="activation-start-trading.html" class="nav-sub-link">
+                <span class="nav-sub-link__icon">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.2"
+                      d="M16.25 10C16.25 11.2361 15.8834 12.4445 15.1967 13.4723C14.5099 14.5001 13.5338 15.3012 12.3918 15.7742C11.2497 16.2473 9.99307 16.3711 8.78069 16.1299C7.56831 15.8887 6.45466 15.2935 5.58058 14.4194C4.70651 13.5453 4.11125 12.4317 3.87009 11.2193C3.62894 10.0069 3.75271 8.75027 4.22576 7.60823C4.6988 6.46619 5.49988 5.49007 6.52769 4.80332C7.55549 4.11656 8.76387 3.75 10 3.75C11.6576 3.75 13.2473 4.40848 14.4194 5.58058C15.5915 6.75268 16.25 8.3424 16.25 10Z"
+                      fill="#E0A130" />
+                    <path
+                      d="M12.5 10C12.5 10.4945 12.3534 10.9778 12.0787 11.3889C11.804 11.8 11.4135 12.1205 10.9567 12.3097C10.4999 12.4989 9.99723 12.5484 9.51227 12.452C9.02732 12.3555 8.58187 12.1174 8.23223 11.7678C7.8826 11.4181 7.6445 10.9727 7.54804 10.4877C7.45157 10.0028 7.50108 9.50011 7.6903 9.04329C7.87952 8.58648 8.19995 8.19603 8.61108 7.92133C9.0222 7.64662 9.50555 7.5 10 7.5C10.663 7.5 11.2989 7.76339 11.7678 8.23223C12.2366 8.70107 12.5 9.33696 12.5 10Z"
+                      fill="#E0A130" />
+                  </svg>
+                </span>
+                <span class="nav-sub-link__text">Start Trading</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="partner-program.html" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.3332 17.5V15.8333C13.3332 14.9493 12.982 14.1014 12.3569 13.4763C11.7317 12.8512 10.8839 12.5 9.99984 12.5H4.99984C4.11578 12.5 3.26794 12.8512 2.64281 13.4763C2.01769 14.1014 1.6665 14.9493 1.6665 15.8333V17.5"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M13.3335 2.60666C14.0483 2.79197 14.6813 3.20938 15.1332 3.79338C15.5851 4.37738 15.8303 5.0949 15.8303 5.83333C15.8303 6.57175 15.5851 7.28927 15.1332 7.87327C14.6813 8.45727 14.0483 8.87468 13.3335 9.05999"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M18.3335 17.5V15.8333C18.3329 15.0948 18.0871 14.3773 17.6346 13.7936C17.1821 13.2099 16.5486 12.793 15.8335 12.6083"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M7.49984 9.16667C9.34079 9.16667 10.8332 7.67428 10.8332 5.83333C10.8332 3.99238 9.34079 2.5 7.49984 2.5C5.65889 2.5 4.1665 3.99238 4.1665 5.83333C4.1665 7.67428 5.65889 9.16667 7.49984 9.16667Z"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="nav-link__text">Partner Program</span>
+            <span class="nav-link__arrow">
+              <svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.46428 10.5925L3.75011 15.3067L2.57178 14.1283L6.69678 10.0033L2.57178 5.87835L3.75011 4.70001L8.46428 9.41418C8.6205 9.57045 8.70827 9.78238 8.70827 10.0033C8.70827 10.2243 8.6205 10.4362 8.46428 10.5925Z"
+                  fill="#CACACA" />
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.6668 10.8333C16.6668 15 13.7502 17.0833 10.2835 18.2917C10.102 18.3532 9.90478 18.3502 9.72516 18.2833C6.25016 17.0833 3.3335 15 3.3335 10.8333V5C3.3335 4.77898 3.42129 4.56702 3.57757 4.41074C3.73385 4.25446 3.94582 4.16666 4.16683 4.16666C5.8335 4.16666 7.91683 3.16666 9.36683 1.9C9.54338 1.74916 9.76796 1.66629 10.0002 1.66629C10.2324 1.66629 10.457 1.74916 10.6335 1.9C12.0918 3.175 14.1668 4.16666 15.8335 4.16666C16.0545 4.16666 16.2665 4.25446 16.4228 4.41074C16.579 4.56702 16.6668 4.77898 16.6668 5V10.8333Z"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 9.99998L9.16667 11.6666L12.5 8.33331" stroke="#CACACA" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="nav-link__text">Profile Settings</span>
+            <span class="nav-link__arrow">
+              <svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M8.46428 10.5925L3.75011 15.3067L2.57178 14.1283L6.69678 10.0033L2.57178 5.87835L3.75011 4.70001L8.46428 9.41418C8.6205 9.57045 8.70827 9.78238 8.70827 10.0033C8.70827 10.2243 8.6205 10.4362 8.46428 10.5925Z"
+                  fill="#CACACA" />
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <span class="nav-link__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.5002 1.66669H5.00016C4.55814 1.66669 4.13421 1.84228 3.82165 2.15484C3.50909 2.4674 3.3335 2.89133 3.3335 3.33335V16.6667C3.3335 17.1087 3.50909 17.5326 3.82165 17.8452C4.13421 18.1578 4.55814 18.3334 5.00016 18.3334H15.0002C15.4422 18.3334 15.8661 18.1578 16.1787 17.8452C16.4912 17.5326 16.6668 17.1087 16.6668 16.6667V5.83335L12.5002 1.66669Z"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M11.6665 1.66669V5.00002C11.6665 5.44205 11.8421 5.86597 12.1547 6.17853C12.4672 6.49109 12.8911 6.66669 13.3332 6.66669H16.6665"
+                  stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.33317 7.5H6.6665" stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M13.3332 10.8333H6.6665" stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M13.3332 14.1667H6.6665" stroke="#CACACA" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="nav-link__text">Terms & Conditions</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="sidebar__toggle" aria-label="Toggle sidebar">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.5 15L7.5 10L12.5 5" stroke="#E0A130" stroke-width="1.66587" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar__title">
+      <!-- Page Header -->
+      <div class="activation-page__header">
+        <h1 class="activation-page__title">Start Trading</h1>
+        <p class="activation-page__subtitle">Connect your trading account</p>
+      </div>
+    </div>
+
+    <div class="navbar__user">
+      <div class="user-profile">
+        <div class="user-profile__info">
+          <div class="user-profile__name">Alex Morgan</div>
+          <div class="user-profile__badge">Pro Account</div>
+        </div>
+        <div class="user-profile__avatar">
+          <img src="../assets/images/profile-image.jpg" alt="Alex Morgan" />
+        </div>
+      </div>
+
+      <div class="navbar__separator"></div>
+
+      <button class="btn-logout">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.1345 10.0177H8.72863M8.72863 10.0177C8.72863 10.3777 10.0897 11.5884 10.0897 11.5884M8.72863 10.0177C8.72863 9.64758 10.0897 8.46084 10.0897 8.46084M6.8181 7.47053V12.5232M16 10C16 7.17179 16 5.75705 15.1215 4.87853C14.2429 4 12.8288 4 10 4C7.17179 4 5.75705 4 4.87853 4.87853C4 5.75705 4 7.17116 4 10C4 12.8282 4 14.2429 4.87853 15.1215C5.75705 16 7.17116 16 10 16C12.8282 16 14.2429 16 15.1215 15.1215C16 14.2429 16 12.8288 16 10Z"
+            stroke="#FF3B30" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>Logout</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="activation-page">
+    <div class="activation-page__container">
+      <div class="activation-page__content">
+        <!-- Trading Form -->
+        <div class="trading-form">
+          <!-- Step Indicator -->
+          <div class="step-indicator">
+            <div class="step-item step-item--active" id="step-01">
+              <div class="step-circle step-circle--active">
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" id="step-01-icon">
+                  <g filter="url(#filter0_d_320_486)">
+                    <rect x="15" y="15" width="28" height="28" rx="14" fill="black" shape-rendering="crispEdges"/>
+                    <rect x="15.5" y="15.5" width="27" height="27" rx="13.5" stroke="#00FF9C" shape-rendering="crispEdges"/>
+                    <path opacity="0.2" d="M38 29C38 30.78 37.4722 32.5201 36.4832 34.0001C35.4943 35.4802 34.0887 36.6337 32.4442 37.3149C30.7996 37.9961 28.99 38.1743 27.2442 37.8271C25.4984 37.4798 23.8947 36.6226 22.636 35.364C21.3774 34.1053 20.5202 32.5016 20.1729 30.7558C19.8257 29.01 20.0039 27.2004 20.6851 25.5558C21.3663 23.9113 22.5198 22.5057 23.9999 21.5168C25.4799 20.5278 27.22 20 29 20C31.387 20 33.6761 20.9482 35.364 22.636C37.0518 24.3239 38 26.613 38 29Z" fill="#00FF9C"/>
+                    <path d="M32.375 29C32.375 29.6675 32.1771 30.32 31.8062 30.875C31.4354 31.4301 30.9083 31.8626 30.2916 32.1181C29.6749 32.3735 28.9963 32.4404 28.3416 32.3102C27.6869 32.1799 27.0855 31.8585 26.6135 31.3865C26.1415 30.9145 25.8201 30.3131 25.6899 29.6584C25.5596 29.0037 25.6265 28.3251 25.8819 27.7084C26.1374 27.0917 26.5699 26.5646 27.125 26.1938C27.68 25.8229 28.3325 25.625 29 25.625C29.8951 25.625 30.7535 25.9806 31.3865 26.6135C32.0194 27.2464 32.375 28.1049 32.375 29Z" fill="#00FF9C"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_320_486" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset/>
+                      <feGaussianBlur stdDeviation="7.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 1 0 0 0 0 0.611765 0 0 0 0.3 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_320_486"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_320_486" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+                <!-- Completed Icon (hidden by default) -->
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" id="step-01-completed-icon" style="display: none;">
+                  <g filter="url(#filter0_d_321_1188)">
+                    <rect x="15" y="15" width="28" height="28" rx="14" fill="#00FF9C" shape-rendering="crispEdges"/>
+                    <rect x="15.5" y="15.5" width="27" height="27" rx="13.5" stroke="#00FF9C" shape-rendering="crispEdges"/>
+                    <path d="M35 24.5L26.75 32.75L23 29" stroke="black" stroke-width="2.99903" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_321_1188" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset/>
+                      <feGaussianBlur stdDeviation="7.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 1 0 0 0 0 0.611765 0 0 0 0.3 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_321_1188"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_321_1188" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <span class="step-label">Step 01</span>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step-item step-item--inactive" id="step-02">
+              <div class="step-circle step-circle--inactive" id="step-02-circle">
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" id="step-02-icon">
+                  <g filter="url(#filter0_d_320_486_inactive)">
+                    <rect x="15" y="15" width="28" height="28" rx="14" fill="black" shape-rendering="crispEdges"/>
+                    <rect x="15.5" y="15.5" width="27" height="27" rx="13.5" stroke="#00FF9C" stroke-opacity="0.3" shape-rendering="crispEdges"/>
+                    <path opacity="0.1" d="M38 29C38 30.78 37.4722 32.5201 36.4832 34.0001C35.4943 35.4802 34.0887 36.6337 32.4442 37.3149C30.7996 37.9961 28.99 38.1743 27.2442 37.8271C25.4984 37.4798 23.8947 36.6226 22.636 35.364C21.3774 34.1053 20.5202 32.5016 20.1729 30.7558C19.8257 29.01 20.0039 27.2004 20.6851 25.5558C21.3663 23.9113 22.5198 22.5057 23.9999 21.5168C25.4799 20.5278 27.22 20 29 20C31.387 20 33.6761 20.9482 35.364 22.636C37.0518 24.3239 38 26.613 38 29Z" fill="#00FF9C"/>
+                    <path d="M32.375 29C32.375 29.6675 32.1771 30.32 31.8062 30.875C31.4354 31.4301 30.9083 31.8626 30.2916 32.1181C29.6749 32.3735 28.9963 32.4404 28.3416 32.3102C27.6869 32.1799 27.0855 31.8585 26.6135 31.3865C26.1415 30.9145 25.8201 30.3131 25.6899 29.6584C25.5596 29.0037 25.6265 28.3251 25.8819 27.7084C26.1374 27.0917 26.5699 26.5646 27.125 26.1938C27.68 25.8229 28.3325 25.625 29 25.625C29.8951 25.625 30.7535 25.9806 31.3865 26.6135C32.0194 27.2464 32.375 28.1049 32.375 29Z" fill="#00FF9C" fill-opacity="0.3"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_320_486_inactive" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset/>
+                      <feGaussianBlur stdDeviation="7.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 1 0 0 0 0 0.611765 0 0 0 0.15 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_320_486_inactive"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_320_486_inactive" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+                <!-- Active Icon (hidden by default) -->
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" id="step-02-active-icon" style="display: none;">
+                  <g filter="url(#filter0_d_320_486_step02)">
+                    <rect x="15" y="15" width="28" height="28" rx="14" fill="black" shape-rendering="crispEdges"/>
+                    <rect x="15.5" y="15.5" width="27" height="27" rx="13.5" stroke="#00FF9C" shape-rendering="crispEdges"/>
+                    <path opacity="0.2" d="M38 29C38 30.78 37.4722 32.5201 36.4832 34.0001C35.4943 35.4802 34.0887 36.6337 32.4442 37.3149C30.7996 37.9961 28.99 38.1743 27.2442 37.8271C25.4984 37.4798 23.8947 36.6226 22.636 35.364C21.3774 34.1053 20.5202 32.5016 20.1729 30.7558C19.8257 29.01 20.0039 27.2004 20.6851 25.5558C21.3663 23.9113 22.5198 22.5057 23.9999 21.5168C25.4799 20.5278 27.22 20 29 20C31.387 20 33.6761 20.9482 35.364 22.636C37.0518 24.3239 38 26.613 38 29Z" fill="#00FF9C"/>
+                    <path d="M32.375 29C32.375 29.6675 32.1771 30.32 31.8062 30.875C31.4354 31.4301 30.9083 31.8626 30.2916 32.1181C29.6749 32.3735 28.9963 32.4404 28.3416 32.3102C27.6869 32.1799 27.0855 31.8585 26.6135 31.3865C26.1415 30.9145 25.8201 30.3131 25.6899 29.6584C25.5596 29.0037 25.6265 28.3251 25.8819 27.7084C26.1374 27.0917 26.5699 26.5646 27.125 26.1938C27.68 25.8229 28.3325 25.625 29 25.625C29.8951 25.625 30.7535 25.9806 31.3865 26.6135C32.0194 27.2464 32.375 28.1049 32.375 29Z" fill="#00FF9C"/>
+                  </g>
+                  <defs>
+                    <filter id="filter0_d_320_486_step02" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset/>
+                      <feGaussianBlur stdDeviation="7.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 1 0 0 0 0 0.611765 0 0 0 0.3 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_320_486_step02"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_320_486_step02" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <span class="step-label step-label--inactive" id="step-02-label">Step 02</span>
+            </div>
+          </div>
+
+          <!-- Instruction Text -->
+          <div class="start-trading-instruction">
+            <p>Follow This Link To Register with the Broker</p>
+          </div>
+          <div class="trading-form__grid">
+            <!-- Server Name -->
+            <div class="input-wrapper">
+              <label class="input-label">Server Name</label>
+              <div class="input-container">
+                <input type="text" class="input-field" placeholder="e.g. Alpha Gold-Live" />
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_320_402)">
+                      <path d="M15 1.50009H3C2.17157 1.50009 1.5 2.17166 1.5 3.00009V6.00009C1.5 6.82852 2.17157 7.50009 3 7.50009H15C15.8284 7.50009 16.5 6.82852 16.5 6.00009V3.00009C16.5 2.17166 15.8284 1.50009 15 1.50009Z" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15 10.5H3C2.17157 10.5 1.5 11.1716 1.5 12V15C1.5 15.8284 2.17157 16.5 3 16.5H15C15.8284 16.5 16.5 15.8284 16.5 15V12C16.5 11.1716 15.8284 10.5 15 10.5Z" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M4.5 4.5H4.5075" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M4.5 13.5H4.5075" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_320_402">
+                        <rect width="18" height="18" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Trading ID -->
+            <div class="input-wrapper">
+              <label class="input-label">Trading ID</label>
+              <div class="input-container">
+                <input type="text" class="input-field" placeholder="Enter your ID" />
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.25 15.7492V14.2492C14.25 13.4536 13.9339 12.6905 13.3713 12.1279C12.8087 11.5653 12.0456 11.2492 11.25 11.2492H6.75C5.95435 11.2492 5.19129 11.5653 4.62868 12.1279C4.06607 12.6905 3.75 13.4536 3.75 14.2492V15.7492" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 8.24985C10.6569 8.24985 12 6.9067 12 5.24985C12 3.59299 10.6569 2.24985 9 2.24985C7.34315 2.24985 6 3.59299 6 5.24985C6 6.9067 7.34315 8.24985 9 8.24985Z" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Trading Password -->
+            <div class="input-wrapper">
+              <label class="input-label">Trading Password</label>
+              <div class="input-container">
+                <input type="password" class="input-field input-field--password" id="trading-password" placeholder="Enter your password" />
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_320_442)">
+                      <path d="M14.25 8.24942H3.75C2.92157 8.24942 2.25 8.92099 2.25 9.74942V14.9994C2.25 15.8278 2.92157 16.4994 3.75 16.4994H14.25C15.0784 16.4994 15.75 15.8278 15.75 14.9994V9.74942C15.75 8.92099 15.0784 8.24942 14.25 8.24942Z" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M5.24951 8.24991V5.24991C5.24951 4.25535 5.6446 3.30152 6.34786 2.59826C7.05112 1.895 8.00495 1.49991 8.99951 1.49991C9.99407 1.49991 10.9479 1.895 11.6512 2.59826C12.3544 3.30152 12.7495 4.25535 12.7495 5.24991V8.24991" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_320_442">
+                        <rect width="17.9988" height="17.9988" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+                <button type="button" class="input-toggle input-toggle--password" id="password-toggle" aria-label="Toggle password visibility">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="eye-icon">
+                    <path d="M9 3.75C5.25 3.75 2.0475 6.1425 0.75 9.75C2.0475 13.3575 5.25 15.75 9 15.75C12.75 15.75 15.9525 13.3575 17.25 9.75C15.9525 6.1425 12.75 3.75 9 3.75Z" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 12.75C10.6569 12.75 12 11.4069 12 9.75C12 8.09315 10.6569 6.75 9 6.75C7.34315 6.75 6 8.09315 6 9.75C6 11.4069 7.34315 12.75 9 12.75Z" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="eye-off-icon" style="display: none;">
+                    <path d="M1.5 1.5L16.5 16.5" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.275 7.275C6.825 7.725 6.75 8.475 7.05 9C7.35 9.525 7.95 9.75 8.4 9.75" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.75 3.75C2.625 4.875 1.875 6.375 1.5 7.875C2.25 10.875 5.25 13.125 9 13.125C10.125 13.125 11.25 12.9 12.225 12.45" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.25 11.25C15.375 10.125 16.125 8.625 16.5 7.125C15.75 4.125 12.75 1.875 9 1.875C8.25 1.875 7.5 2.025 6.75 2.175" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 6.75C10.6569 6.75 12 8.09315 12 9.75" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="input-wrapper">
+              <label class="input-label">Email Address</label>
+              <div class="input-container">
+                <input type="email" class="input-field" placeholder="name@example.com" />
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_320_450)">
+                      <path d="M16.499 5.24963L9.75618 9.54459C9.52737 9.67749 9.26747 9.74749 9.00286 9.74749C8.73825 9.74749 8.47835 9.67749 8.24954 9.54459L1.5 5.24963" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M14.7061 3.06616H2.70693C1.87856 3.06616 1.20703 3.73769 1.20703 4.56606V13.5654C1.20703 14.3938 1.87856 15.0653 2.70693 15.0653H14.7061C15.5345 15.0653 16.206 14.3938 16.206 13.5654V4.56606C16.206 3.73769 15.5345 3.06616 14.7061 3.06616Z" stroke="#717182" stroke-width="1.4999" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_320_450">
+                        <rect width="17.9988" height="17.9988" fill="white"/>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="trading-form__actions" id="step-01-actions">
+            <button type="button" class="btn-back">Back</button>
+            <button type="button" class="btn-connect" id="connect-account-btn">
+              <span>Connect Account</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Step 02 Content (Hidden by default) -->
+          <div class="step-02-content step-02-content--hidden" id="step-02-content">
+            <!-- Subscription Heading -->
+            <div class="subscription-heading">
+              <h2 class="subscription-title">Subscribe to AlphaXAU Miner :</h2>
+              <p class="subscription-description">
+                You have to pay <span class="highlight">$19</span> for <span class="highlight">12 MONTHS</span>. This includes full access to the AlphaXAU Miner updates, customer support, and educational resources.
+              </p>
+            </div>
+
+            <!-- Payment Method Selection -->
+            <div class="payment-method-wrapper">
+              <label class="input-label">Select Method</label>
+              <div class="input-container">
+                <select class="input-field input-field--select" id="payment-method">
+                  <option value="">Select</option>
+                  <option value="bep-20" selected>BEP-20</option>
+                  <option value="credit-card">Credit Card</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="crypto">Cryptocurrency</option>
+                </select>
+                <span class="select-arrow">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6L8 10L12 6" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Payment Details Section (Shown when BEP-20 is selected) -->
+            <div class="payment-details" id="payment-details">
+              <div class="payment-details__content">
+                <!-- QR Code -->
+                <div class="qr-code-container">
+                  <img src="../assets/images/QR-Demo.png" alt="QR Code" class="qr-code-image" />
+                </div>
+
+                <!-- Address Section -->
+                <div class="address-section">
+                  <p class="address-label">Or Copy this address</p>
+                  <div class="address-container">
+                    <input type="text" class="address-field" id="crypto-address" value="0x43051745D3a56f1D4965877FC97EF3C3Db7Fa4CA" readonly />
+                    <button type="button" class="address-copy-btn" id="copy-address-btn" aria-label="Copy address">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.5 4.5H11.5C12.3284 4.5 13 5.17157 13 6V12C13 12.8284 12.3284 13.5 11.5 13.5H5.5C4.67157 13.5 4 12.8284 4 12V6C4 5.17157 4.67157 4.5 5.5 4.5Z" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 6.5C2 5.67157 2.67157 5 3.5 5H9.5" stroke="#717182" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 02 Action Buttons -->
+            <div class="trading-form__actions">
+              <button type="button" class="btn-back" id="previous-btn">Previous</button>
+              <button type="button" class="btn-connect" id="submit-payment-btn">
+                <span>Click After Payment</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="start-trading-footer">
+    <p>Activation - Start Trading - Step 02</p>
+  </footer>
+
+  <script>
+    // Step management
+    let currentStep = 1;
+
+    // Password toggle functionality
+    const passwordToggle = document.getElementById('password-toggle');
+    const passwordInput = document.getElementById('trading-password');
+    const eyeIcon = document.getElementById('eye-icon');
+    const eyeOffIcon = document.getElementById('eye-off-icon');
+
+    if (passwordToggle && passwordInput) {
+      passwordToggle.addEventListener('click', () => {
+        const isPassword = passwordInput.type === 'password';
+        passwordInput.type = isPassword ? 'text' : 'password';
+        
+        if (isPassword) {
+          eyeIcon.style.display = 'none';
+          eyeOffIcon.style.display = 'block';
+        } else {
+          eyeIcon.style.display = 'block';
+          eyeOffIcon.style.display = 'none';
+        }
+      });
+    }
+
+    // Connect Account button - move to Step 02
+    const connectAccountBtn = document.getElementById('connect-account-btn');
+    const step01Actions = document.getElementById('step-01-actions');
+    const step02Content = document.getElementById('step-02-content');
+    const step01Icon = document.getElementById('step-01-icon');
+    const step01CompletedIcon = document.getElementById('step-01-completed-icon');
+    const step02Item = document.querySelector('.step-item:last-child');
+    const step02Label = step02Item?.querySelector('.step-label');
+    const step02Circle = step02Item?.querySelector('.step-circle');
+
+    if (connectAccountBtn) {
+      connectAccountBtn.addEventListener('click', () => {
+        // Validate form fields (basic validation)
+        const serverName = document.querySelector('input[placeholder="e.g. Alpha Gold-Live"]').value;
+        const tradingId = document.querySelector('input[placeholder="Enter your ID"]').value;
+        const tradingPassword = passwordInput.value;
+        const email = document.querySelector('input[type="email"]').value;
+
+        if (!serverName || !tradingId || !tradingPassword || !email) {
+          alert('Please fill in all fields');
+          return;
+        }
+
+        // Move to Step 02
+        currentStep = 2;
+        
+        // Hide Step 01 content
+        document.querySelector('.start-trading-instruction').style.display = 'none';
+        document.querySelector('.trading-form__grid').style.display = 'none';
+        step01Actions.style.display = 'none';
+
+        // Show Step 02 content
+        step02Content.classList.remove('step-02-content--hidden');
+
+        // Update Step 01 icon to completed
+        if (step01Icon) step01Icon.style.display = 'none';
+        if (step01CompletedIcon) step01CompletedIcon.style.display = 'block';
+
+        // Update Step 02 to active
+        const step02Item = document.getElementById('step-02');
+        const step02Label = document.getElementById('step-02-label');
+        const step02Circle = document.getElementById('step-02-circle');
+        const step02Icon = document.getElementById('step-02-icon');
+        const step02ActiveIcon = document.getElementById('step-02-active-icon');
+
+        if (step02Item) {
+          step02Item.classList.remove('step-item--inactive');
+          step02Item.classList.add('step-item--active');
+        }
+        if (step02Label) {
+          step02Label.classList.remove('step-label--inactive');
+        }
+        if (step02Circle) {
+          step02Circle.classList.remove('step-circle--inactive');
+          step02Circle.classList.add('step-circle--active');
+        }
+        if (step02Icon) {
+          step02Icon.style.display = 'none';
+        }
+        if (step02ActiveIcon) {
+          step02ActiveIcon.style.display = 'block';
+        }
+
+        // Update navbar subtitle
+        const navbarSubtitle = document.querySelector('.navbar__title .activation-page__subtitle');
+        if (navbarSubtitle) {
+          navbarSubtitle.textContent = 'Start Trading - Step 02';
+        }
+      });
+    }
+
+    // Payment method selection - show/hide payment details
+    const paymentMethod = document.getElementById('payment-method');
+    const paymentDetails = document.getElementById('payment-details');
+    
+    if (paymentMethod && paymentDetails) {
+      // Show payment details if BEP-20 is selected on load
+      const checkPaymentMethod = () => {
+        if (paymentMethod.value === 'bep-20') {
+          paymentDetails.style.display = 'block';
+        } else {
+          paymentDetails.style.display = 'none';
+        }
+      };
+
+      // Check on page load
+      checkPaymentMethod();
+
+      // Check on change
+      paymentMethod.addEventListener('change', checkPaymentMethod);
+    }
+
+    // Copy address functionality
+    const copyAddressBtn = document.getElementById('copy-address-btn');
+    const cryptoAddress = document.getElementById('crypto-address');
+    
+    if (copyAddressBtn && cryptoAddress) {
+      copyAddressBtn.addEventListener('click', () => {
+        cryptoAddress.select();
+        cryptoAddress.setSelectionRange(0, 99999); // For mobile devices
+        navigator.clipboard.writeText(cryptoAddress.value).then(() => {
+          // Visual feedback
+          const originalHTML = copyAddressBtn.innerHTML;
+          copyAddressBtn.innerHTML = `
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 4L6 11L3 8" stroke="#00FF9C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          `;
+          setTimeout(() => {
+            copyAddressBtn.innerHTML = originalHTML;
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy:', err);
+        });
+      });
+    }
+
+    // Previous button - go back to Step 01
+    const previousBtn = document.getElementById('previous-btn');
+    if (previousBtn) {
+      previousBtn.addEventListener('click', () => {
+        currentStep = 1;
+        
+        // Show Step 01 content
+        document.querySelector('.start-trading-instruction').style.display = 'block';
+        document.querySelector('.trading-form__grid').style.display = 'grid';
+        step01Actions.style.display = 'flex';
+
+        // Hide Step 02 content
+        step02Content.classList.add('step-02-content--hidden');
+
+        // Update Step 01 icon back to active (not completed)
+        if (step01Icon) step01Icon.style.display = 'block';
+        if (step01CompletedIcon) step01CompletedIcon.style.display = 'none';
+
+        // Update Step 02 to inactive
+        const step02Item = document.getElementById('step-02');
+        const step02Label = document.getElementById('step-02-label');
+        const step02Circle = document.getElementById('step-02-circle');
+        const step02Icon = document.getElementById('step-02-icon');
+        const step02ActiveIcon = document.getElementById('step-02-active-icon');
+
+        if (step02Item) {
+          step02Item.classList.add('step-item--inactive');
+          step02Item.classList.remove('step-item--active');
+        }
+        if (step02Label) {
+          step02Label.classList.add('step-label--inactive');
+        }
+        if (step02Circle) {
+          step02Circle.classList.add('step-circle--inactive');
+          step02Circle.classList.remove('step-circle--active');
+        }
+        if (step02Icon) {
+          step02Icon.style.display = 'block';
+        }
+        if (step02ActiveIcon) {
+          step02ActiveIcon.style.display = 'none';
+        }
+
+        // Update navbar subtitle
+        const navbarSubtitle = document.querySelector('.navbar__title .activation-page__subtitle');
+        if (navbarSubtitle) {
+          navbarSubtitle.textContent = 'Connect your trading account';
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
