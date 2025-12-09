@@ -3,7 +3,7 @@
 # Startup script for CodeIgniter application on port 8080
 # This uses PHP's built-in development server
 
-PORT=8080
+PORT=8000
 DOCUMENT_ROOT="$(cd "$(dirname "$0")" && pwd)"
 ROUTER="$DOCUMENT_ROOT/router.php"
 
