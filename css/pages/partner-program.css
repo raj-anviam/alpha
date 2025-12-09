@@ -25,54 +25,29 @@
 
 /* Affiliate Card - Figma Specs */
 .affiliate-card {
-  background-color: #050B08;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 255, 156, 0.2);
   background-image: url('../../assets/images/Container.png');
   background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: right center;
   padding: 24px;
-  position: relative;
-  overflow: hidden;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
-/* .affiliate-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 249px;
-  height: 342px;
-  background-image: url('../../assets/images/Container.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.3;
-  z-index: 0;
-  pointer-events: none;
-  transform: translate(20%, -10%);
-} */
-
-.affiliate-card__content {
+/* .affiliate-card__content {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;
-}
+} */
 
 .affiliate-card__left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
-  width: 100%;
+  padding: 24px;
 }
 
 /* Icon Container - Figma Specs */
@@ -177,6 +152,7 @@
   min-height: 96px;
   display: flex;
   align-items: center;
+  margin: 12px
 }
 
 .referral-card__content {

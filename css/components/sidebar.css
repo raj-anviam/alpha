@@ -257,12 +257,22 @@
 
 /* Sub-navigation styles */
 .nav-sub-list {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 4px;
   margin-top: 4px;
   padding-left: 0;
   list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.nav-item--expanded .nav-sub-list {
+  display: flex;
+  max-height: 500px;
+  opacity: 1;
 }
 
 .nav-sub-link {

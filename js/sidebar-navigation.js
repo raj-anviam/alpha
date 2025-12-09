@@ -24,40 +24,33 @@
     // Set active states based on current page
     setActiveStates();
     
-    // Handle parent item clicks - find by text content
+    // Handle parent item clicks - toggle expansion
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
       const navLink = item.querySelector('.nav-link');
       if (!navLink) return;
       
-      const linkText = navLink.querySelector('.nav-link__text')?.textContent.trim();
       const hasSubList = item.querySelector('.nav-sub-list');
       
       if (hasSubList) {
-        // This is a parent item with children
+        // This is a parent item with children - make it toggleable only
+        // Change href to prevent navigation
+        const originalHref = navLink.getAttribute('href');
+        navLink.setAttribute('href', 'javascript:void(0)');
+        navLink.setAttribute('data-original-href', originalHref || '');
+        
         navLink.addEventListener('click', function(e) {
-          const href = navLink.getAttribute('href');
-          
-          // If href is # or empty, redirect to first child
-          if (!href || href === '#' || href === 'javascript:void(0)') {
-            e.preventDefault();
-            e.stopPropagation();
-            const firstChild = item.querySelector('.nav-sub-list .nav-sub-link');
-            if (firstChild) {
-              const childHref = firstChild.getAttribute('href');
-              if (childHref) {
-                // Handle relative paths
-                const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
-                const fullPath = childHref.startsWith('../') 
-                  ? childHref 
-                  : childHref.startsWith('/') 
-                    ? childHref 
-                    : basePath + '/' + childHref;
-                window.location.href = fullPath;
-              }
-            }
+          // Don't toggle if clicking on a sub-link
+          if (e.target.closest('.nav-sub-link')) {
+            return;
           }
-          // If href exists and is valid, let it work normally (don't prevent default)
+          
+          // Prevent default navigation for parent items with sub-lists
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Toggle expanded state
+          item.classList.toggle('nav-item--expanded');
         });
       }
       // For items without sub-list, links should work normally - no interference needed
