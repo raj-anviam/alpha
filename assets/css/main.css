@@ -1,0 +1,24 @@
+/* Main CSS - Import all stylesheets */
+
+/* Base Styles */
+@import url('./base/variables.css');
+@import url('./base/reset.css');
+@import url('./base/typography.css');
+@import url('./base/utilities.css');
+
+/* Component Styles */
+@import url('./components/input.css');
+@import url('./components/button.css');
+@import url('./components/modal.css');
+@import url('./components/sidebar.css');
+@import url('./components/navbar.css');
+
+/* Page Styles */
+@import url('./pages/login.css');
+@import url('./pages/signup.css');
+@import url('./pages/dashboard.css');
+@import url('./pages/activation.css');
+@import url('./pages/partner-program.css');
+@import url('./pages/refer-earn.css');
+@import url('./pages/profile.css');
+

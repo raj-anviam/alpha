@@ -1,0 +1,424 @@
+/* Partner Program Page Styles */
+.partner-program {
+  margin-left: 280px;
+  margin-top: 80px;
+  padding: var(--spacing-xl) var(--spacing-xl);
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-secondary);
+  font-family: var(--font-family-primary);
+}
+
+.partner-program__container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Page Header */
+.partner-program__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Affiliate Card - Figma Specs */
+.affiliate-card {
+  background-image: url('/assets/images/Container.png');
+  background-size: contain;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding: 24px;
+}
+
+/* .affiliate-card__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+} */
+
+.affiliate-card__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+}
+
+/* Icon Container - Figma Specs */
+.affiliate-card__icon {
+  width: 74px;
+  height: 74px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: 1.18px solid rgba(224, 161, 48, 0.2);
+  background-color: rgba(224, 161, 48, 0.1);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.affiliate-card__icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.affiliate-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+/* Heading - Figma Specs */
+.affiliate-card__heading {
+  font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* Description - Figma Specs */
+.affiliate-card__description {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #99A1AF;
+  margin: 0;
+  margin-top: 4px;
+}
+
+/* Button - Figma Specs (Green Button) */
+.affiliate-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: rgba(0, 255, 156, 0.1);
+  border: 1px solid rgba(0, 255, 156, 0.5);
+  border-radius: 8px;
+  color: #00FF9C;
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: fit-content;
+  min-width: auto;
+  white-space: nowrap;
+  box-shadow: 0 0 15px 0 rgba(0, 255, 156, 0.1);
+}
+
+.affiliate-card__button:hover {
+  background-color: rgba(0, 255, 156, 0.15);
+  border-color: rgba(0, 255, 156, 0.6);
+  box-shadow: 0 0 15px 0 rgba(0, 255, 156, 0.15);
+}
+
+.affiliate-card__button:active {
+  background-color: rgba(0, 255, 156, 0.2);
+  border-color: rgba(0, 255, 156, 0.7);
+}
+
+.affiliate-card__button svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+
+/* Referral Card - Figma Specs */
+.referral-card {
+  background-color: #0A0F0C #000000;
+  background-image: linear-gradient(90deg, #000000 0%,  rgba(227, 183, 95, 0.05) 50%, #000000 100%);
+  border-radius: 14px;
+  padding: var(--spacing-xl);
+  border: 1px solid rgba(224, 161, 48, 0.1);
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  margin: 12px
+}
+
+.referral-card__content {
+  display: flex;
+  /* align-items: center; */
+  gap: var(--spacing-xl);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.referral-card__icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.referral-card__icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.referral-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+/* Code - First Line (Large, Bold, Orange-Yellow) */
+.referral-card__code {
+  font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #E0A130;
+  margin: 0;
+  order: 1;
+}
+
+.referral-card__code:not(.approved) {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #99A1AF;
+}
+
+/* Heading - Second Line (Smaller, Light Gray) */
+.referral-card__heading {
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #E0A130;
+  margin: 0;
+  margin-top: 4px;
+  order: 1;
+}
+
+/* Approved state for referral code */
+.referral-card__code.approved {
+  font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #E0A130;
+  margin: 0;
+}
+
+/* Referral Card Input */
+.referral-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.referral-card:hover {
+  border-color: rgba(224, 161, 48, 0.2);
+}
+
+.referral-card__input-wrapper {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  width: 100%;
+}
+
+.referral-card__input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #1E2939;
+  border: 1px solid var(--color-light-green-bright);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.referral-card__input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 2px rgba(224, 161, 48, 0.2);
+}
+
+.referral-card__input::placeholder {
+  color: #6A7282;
+}
+
+/* Copy Code Button */
+.referral-card__copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: rgba(0, 255, 156, 0.1);
+  border: 1px solid rgba(0, 255, 156, 0.5);
+  border-radius: 8px;
+  color: #00FF9C;
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.referral-card__copy-btn:hover {
+  background-color: rgba(0, 255, 156, 0.15);
+  border-color: rgba(0, 255, 156, 0.6);
+}
+
+.referral-card__copy-btn:active {
+  background-color: rgba(0, 255, 156, 0.2);
+  border-color: rgba(0, 255, 156, 0.7);
+}
+
+.referral-card__copy-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+/* Logo image styling */
+.logo img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .affiliate-card {
+    max-width: 100%;
+  }
+
+
+  .affiliate-card__bg {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-program {
+    margin-left: 0 !important;
+    margin-top: 68px;
+    padding: var(--spacing-lg);
+  }
+
+  .affiliate-card {
+    min-height: auto;
+    padding: var(--spacing-lg);
+  }
+
+  .affiliate-card__left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+  }
+
+  .affiliate-card__icon {
+    width: 64px;
+    height: 64px;
+    padding: 12px;
+  }
+
+  .affiliate-card__icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .affiliate-card__heading {
+    font-size: 20px;
+    line-height: 28px;
+    width: 100%;
+    height: auto;
+  }
+
+  .affiliate-card__description {
+    font-size: 13px;
+    line-height: 18px;
+    width: 100%;
+  }
+
+  .affiliate-card__button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .referral-card__content {
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+  }
+
+  .referral-card__copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-program {
+    padding: var(--spacing-md);
+  }
+
+  .affiliate-card {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .affiliate-card__content {
+    gap: var(--spacing-md);
+  }
+
+  .affiliate-card__left {
+    gap: var(--spacing-md);
+  }
+
+  .affiliate-card__icon {
+    width: 56px;
+    height: 56px;
+    padding: 10px;
+  }
+
+  .affiliate-card__icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .affiliate-card__heading {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .affiliate-card__description {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

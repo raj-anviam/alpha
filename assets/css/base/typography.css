@@ -1,0 +1,44 @@
+/* Typography */
+/* Using Orbitron as a similar alternative to Eurostile */
+/* Eurostile is a commercial font, so we use Orbitron which has similar geometric characteristics */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-normal);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  line-height: 1.4;
+}
+
+p {
+  margin: 0;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-link {
+  color: var(--text-link);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+

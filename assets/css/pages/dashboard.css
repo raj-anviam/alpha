@@ -1,0 +1,687 @@
+/* Dashboard Page Styles */
+.dashboard {
+  margin-left: 280px;
+  margin-top: 70px;
+  padding: var(--spacing-xl) var(--spacing-xl);
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-secondary);
+  font-family: 'Inter', var(--font-family-primary);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.dashboard__container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.dashboard__row {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.dashboard__row:first-child {
+  grid-template-columns: 2fr 1fr;
+}
+
+.dashboard__row:last-child {
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--bg-primary);
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  border: 1px solid rgba(224, 161, 48, 0.1);
+  box-shadow: 0 0 10px rgba(224, 161, 48, 0.05);
+}
+
+.card--chart {
+  width: 100%;
+  min-height: 422px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: radial-gradient(circle at center, rgba(224, 161, 48, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card--chart::before {
+  background: radial-gradient(circle at center, rgba(224, 161, 48, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.card__header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card__header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.card__header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: 'Inter', var(--font-family-primary);
+}
+
+.card__subtitle {
+  font-size: 12px;
+  line-height: 16px;
+  color: #CACACA;
+  margin: 0;
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-weight: 400;
+}
+
+.card__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Chart Legend */
+.chart-legend {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.chart-legend__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.chart-legend__item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.chart-legend__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.chart-legend__dot--revenue {
+  background-color: var(--color-gold);
+}
+
+.chart-legend__dot--profit {
+  background-color: var(--color-light-green-bright);
+}
+
+.chart-legend__label {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-family: 'Inter', var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 422px;
+  margin-top: 0;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Win Rate Card Styles */
+.card--winrate {
+  display: flex;
+  flex-direction: column;
+}
+
+.winrate-gauge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing-xl) 0;
+}
+
+.winrate-gauge__circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.winrate-gauge__ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from -90deg,
+    var(--color-gold) 0deg 352.8deg,
+    transparent 352.8deg 360deg
+  );
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  mask: radial-gradient(circle at center, transparent 70px, black 70px);
+  -webkit-mask: radial-gradient(circle at center, transparent 70px, black 70px);
+}
+
+.winrate-gauge__ring::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+
+.winrate-gauge__ring::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  transform: translate(-50%, 0) rotate(352.8deg);
+  transform-origin: 50% 110px;
+  z-index: 1;
+}
+
+.winrate-gauge__progress {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+}
+
+.winrate-gauge__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.winrate-gauge__value {
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: 1;
+  font-family: 'Inter', var(--font-family-primary);
+  margin-bottom: 4px;
+}
+
+.winrate-gauge__label {
+  font-size: var(--font-size-xs);
+  color: var(--text-primary);
+  margin-top: 0;
+  letter-spacing: 1px;
+  font-family: 'Inter', var(--font-family-primary);
+  text-transform: uppercase;
+}
+
+.winrate-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.winrate-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  border: 1px solid rgba(0, 255, 156, 0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  min-height: 60px;
+  justify-content: center;
+}
+
+.winrate-metric__label {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-family: 'Inter', var(--font-family-primary);
+  line-height: 1.2;
+}
+
+.winrate-metric__value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-family: 'Inter', var(--font-family-primary);
+  line-height: 1.2;
+}
+
+.winrate-metric__value--green {
+  color: var(--color-light-green-bright);
+}
+
+/* Metric Cards */
+.metric-card {
+  background-color: var(--bg-primary);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid rgba(106, 194, 72, 0.3);
+  min-height: 207px;
+  box-shadow: 0 0 15px rgba(106, 194, 72, 0.15);
+}
+
+.metric-card--gold {
+  border-color: rgba(224, 161, 48, 0.3);
+  box-shadow: 0 0 15px rgba(224, 161, 48, 0.15);
+}
+
+.metric-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xl);
+}
+
+.metric-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.metric-card__icon--gold {
+  background-color: rgba(224, 161, 48, 0.1);
+  color: var(--color-gold);
+}
+
+.metric-card__icon--green {
+  background-color: rgba(106, 194, 72, 0.1);
+  color: var(--color-light-green-bright);
+}
+
+.metric-card__change {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-light-green-bright);
+  font-family: 'Inter', var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.metric-card__change svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-light-green-bright);
+}
+
+.metric-card__label {
+  font-size: 14px;
+  line-height: 20px;
+  color: #CACACA;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-family: 'Eurostile', var(--font-family-primary);
+  font-weight: 400;
+  margin-top: auto;
+  margin-bottom: var(--spacing-sm);
+}
+
+.metric-card__value {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-family: 'Eurostile-Bold', 'Eurostile', var(--font-family-primary);
+  letter-spacing: 0px;
+  margin-top: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .dashboard__row:first-child {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dashboard__row:first-child {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__row:last-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    margin-left: 0;
+    margin-top: 68px;
+    padding: var(--spacing-lg);
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card--chart {
+    min-height: 380px;
+  }
+
+  .chart-container {
+    height: 380px;
+  }
+
+  .winrate-gauge__circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .winrate-gauge__ring::after {
+    transform-origin: 50% 90px;
+  }
+
+  .winrate-gauge__value {
+    font-size: 40px;
+  }
+
+  .metric-card {
+    min-height: 180px;
+    padding: var(--spacing-lg);
+  }
+
+  .metric-card__value {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    margin-left: 0 !important;
+    margin-top: 68px;
+    padding: var(--spacing-md);
+  }
+
+  .dashboard__container {
+    gap: var(--spacing-lg);
+  }
+
+  .dashboard__row {
+    gap: var(--spacing-lg);
+  }
+
+  .dashboard__row:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card--chart {
+    min-height: 320px;
+  }
+
+  .chart-container {
+    height: 320px;
+  }
+
+  .card__header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .chart-legend {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .winrate-gauge {
+    margin: var(--spacing-lg) 0;
+  }
+
+  .winrate-gauge__circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .winrate-gauge__ring {
+    padding: 15px;
+    mask: radial-gradient(circle at center, transparent 55px, black 55px);
+    -webkit-mask: radial-gradient(circle at center, transparent 55px, black 55px);
+  }
+
+  .winrate-gauge__ring::after {
+    transform-origin: 50% 80px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .winrate-gauge__ring::before {
+    width: 16px;
+    height: 16px;
+  }
+
+  .winrate-gauge__value {
+    font-size: 36px;
+  }
+
+  .winrate-metrics {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .metric-card {
+    min-height: 160px;
+    padding: var(--spacing-md);
+  }
+
+  .metric-card__icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .metric-card__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .metric-card__value {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .metric-card__label {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .card__title {
+    font-size: var(--font-size-md);
+  }
+
+  .card__subtitle {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: var(--spacing-sm);
+  }
+
+  .dashboard__container {
+    gap: var(--spacing-md);
+  }
+
+  .dashboard__row {
+    gap: var(--spacing-md);
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card--chart {
+    min-height: 280px;
+  }
+
+  .chart-container {
+    height: 280px;
+  }
+
+  .winrate-gauge__circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .winrate-gauge__ring {
+    padding: 12px;
+    mask: radial-gradient(circle at center, transparent 50px, black 50px);
+    -webkit-mask: radial-gradient(circle at center, transparent 50px, black 50px);
+  }
+
+  .winrate-gauge__ring::after {
+    transform-origin: 50% 70px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .winrate-gauge__ring::before {
+    width: 14px;
+    height: 14px;
+  }
+
+  .winrate-gauge__value {
+    font-size: 32px;
+  }
+
+  .winrate-gauge__label {
+    font-size: 10px;
+  }
+
+  .metric-card {
+    min-height: 140px;
+    padding: var(--spacing-sm);
+  }
+
+  .metric-card__top {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .metric-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .metric-card__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .metric-card__value {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .metric-card__label {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .metric-card__change {
+    font-size: 11px;
+  }
+
+  .metric-card__change svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .card__title {
+    font-size: 16px;
+  }
+
+  .card__subtitle {
+    font-size: 10px;
+  }
+
+  .chart-legend__item {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .chart-legend__dot {
+    width: 6px;
+    height: 6px;
+  }
+}

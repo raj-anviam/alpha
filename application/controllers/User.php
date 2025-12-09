@@ -16,6 +16,9 @@ class User extends CI_Controller
         $user_id = get_user_id();
         $user_details = $this->user_model->getUserDetails($user_id);
         $data['user_details'] = $user_details;
+        $whr = "user_id = " . $user_id;
+        $refData = $this->common_model->getRecordData('itroducing_alpha', $whr);
+        $data['refData'] = $refData;
         $this->load->view('user/home', $data);
     }
 
@@ -55,7 +58,7 @@ class User extends CI_Controller
                     $transaction_no = get_transaction_no();
                     $currency = $coin;
                     $amount = 1;
-                    
+
                     $this->load->library('Crypt_lib');
                     $trans_no_enc = base64e($transaction_no);
                     $parameters = ['tnxno' => $trans_no_enc];
@@ -103,7 +106,7 @@ class User extends CI_Controller
                                         'created_on' => $created_at
                                     );
                                     $sData = $this->common_model->insert($serverDetails, 'user_td_account');
-                                    $html = '<div class="col-xl-12"><img src="data:image/png;base64,' . $qrcode->qr_code . '"/></div><div class="col-xl-12"><label for="qr" class="form-label">Or Copy this address</label><input type="text" class="form-control" value="' . $payment_address . '" readonly></div><div class="col-xl-12"><a href="'.site_url('user/payment_successful/?id='.$trans_no_enc).'" class="btn btn-outline-primary btn-wave">Click After Payment.</a></div>';
+                                    $html = '<div class="col-xl-12"><img src="data:image/png;base64,' . $qrcode->qr_code . '"/></div><div class="col-xl-12"><label for="qr" class="form-label">Or Copy this address</label><input type="text" class="form-control" value="' . $payment_address . '" readonly></div><div class="col-xl-12"><a href="' . site_url('user/payment_successful/?id=' . $trans_no_enc) . '" class="btn btn-outline-primary btn-wave">Click After Payment.</a></div>';
                                     $formMsg = array('status' => 'success', 'msg' => $html);
                                 }
                             }
@@ -124,8 +127,8 @@ class User extends CI_Controller
                 $recByno = $this->common_model->getRecordData('payments', $cWhr);
                 if (!empty($recByno)) {
                     $payment_id = $recByno[0]['payment_id'];
-                    $uData = array('is_user_submitted'=>1);
-                    $rData = $this->common_model->update($payment_id,$uData,'payment_id','payments');
+                    $uData = array('is_user_submitted' => 1);
+                    $rData = $this->common_model->update($payment_id, $uData, 'payment_id', 'payments');
                 }
             }
         }
@@ -237,6 +240,36 @@ class User extends CI_Controller
             $mobile = $this->input->post('mobile');
             $address = $this->input->post('address');
 
+            // Handle image upload
+            $profile_image = '';
+            if (!empty($_FILES['profileImageInput']['name'])) {
+                $config['upload_path'] = './uploads/profile/';
+                $config['allowed_types'] = 'jpg|jpeg|png|gif';
+                $config['max_size'] = 2048; // 2MB
+                $config['encrypt_name'] = TRUE;
+
+                // Create directory if it doesn't exist
+                if (!is_dir($config['upload_path'])) {
+                    mkdir($config['upload_path'], 0755, true);
+                }
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('profileImageInput')) {
+                    $upload_data = $this->upload->data();
+                    $profile_image = $upload_data['file_name'];
+
+                    // Delete old profile image if exists
+                    if (!empty($recById[0]['profile_image']) && file_exists('./uploads/profile/' . $recById[0]['profile_image'])) {
+                        @unlink('./uploads/profile/' . $recById[0]['profile_image']);
+                    }
+                } else {
+                    $formSubmit['msg'] = $this->upload->display_errors('', '');
+                    echo json_encode($formSubmit);
+                    exit;
+                }
+            }
+
             $uData = array(
                 'username' => $username,
                 'full_name' => $name,
@@ -245,19 +278,34 @@ class User extends CI_Controller
                 'dob' => $date,
                 'mobile' => $mobile,
                 'address' => $address
-
             );
+
+            // Check if profile_image column exists before adding it
+            // Only add profile image if column exists in database
+            if (!empty($profile_image)) {
+                // Check if column exists in users table
+                $query = $this->db->query("SHOW COLUMNS FROM `users` LIKE 'profile_image'");
+                $column_exists = ($query->num_rows() > 0);
+                $uData['profile_image'] = $profile_image;
+                if (!$column_exists) {
+                    $this->db->query("ALTER TABLE `users` ADD `profile_image` VARCHAR(255) NULL");
+                    // end of add column here for profile image
+                }
+              
+            }
+
             $rData = $this->common_model->update($user_id, $uData, 'user_id', 'users');
             if (is_numeric($rData)) {
                 $formSubmit['status'] = 'success';
-                $formSubmit['url'] = site_url('user/user_profile');
+                $formSubmit['url'] = site_url('user/profile_settings');
                 $formSubmit['msg'] = 'Your Profile Settings Changed Successfully.';
             }
             echo json_encode($formSubmit);
         }
     }
-    
-    function partner_program(){
+
+    function partner_program()
+    {
         $user_id = get_user_id();
         $whr = "user_id = " . $user_id;
         $refData = $this->common_model->getRecordData('itroducing_alpha', $whr);
@@ -265,7 +313,12 @@ class User extends CI_Controller
         $this->load->view('user/partner_program', $data);
     }
 
-    function tnc(){
+    function tnc()
+    {
         $this->load->view('user/tnc');
+    }
+    function privacy_policy()
+    {
+        $this->load->view('user/privacy_policy');
     }
 }
