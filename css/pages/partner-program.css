@@ -1,7 +1,7 @@
 /* Partner Program Page Styles */
 .partner-program {
   margin-left: 280px;
-  margin-top: 80px;
+  margin-top: 70px;
   padding: var(--spacing-xl) var(--spacing-xl);
   min-height: calc(100vh - 80px);
   background-color: var(--bg-secondary);

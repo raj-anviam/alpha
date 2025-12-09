@@ -338,7 +338,7 @@ footer p {
 /* High DPI / Large Screens */
 @media (min-width: 1200px) {
     .container {
-        padding: 3rem 2rem;
+        padding: 2rem 2rem;
     }
 
     .terms-card {
