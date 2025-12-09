@@ -269,7 +269,7 @@ class Auth extends CI_Controller
         echo json_encode($formSubmit);
     }
 
-    function signin()
+    function signin()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     {
         is_already_logged_in();
         $data['error'] = "";

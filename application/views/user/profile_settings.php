@@ -202,7 +202,9 @@ if (!empty($dob) && $dob != '0000-00-00') {
           </div>
           <div class="form-group">
             <label class="form-label">Date of Birth</label>
-            <input type="date" class="form-input" name="dob" id="dob" value="<?php echo $dobInput;?>">
+            <div class="date-input-wrapper">
+              <input type="date" class="form-input date-input" name="dob" id="dob" value="<?php echo $dobInput;?>">
+            </div>
           </div>
         </div>
 

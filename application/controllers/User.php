@@ -114,7 +114,26 @@ class User extends CI_Controller
                                         'created_on' => $created_at
                                     );
                                     $sData = $this->common_model->insert($serverDetails, 'user_td_account');
-                                    $html = '<div class="col-xl-12"><img src="data:image/png;base64,' . $qrcode->qr_code . '"/></div><div class="col-xl-12"><label for="qr" class="form-label">Or Copy this address</label><input type="text" class="form-control" value="' . $payment_address . '" readonly></div><div class="col-xl-12"><a href="' . site_url('user/payment_successful/?id=' . $trans_no_enc) . '" class="btn btn-outline-primary btn-wave">Click After Payment.</a></div>';
+                                    $html = '<div style="display: flex; gap: 24px; align-items: flex-start; margin-bottom: 24px;">
+                                        <div style="flex-shrink: 0;">
+                                            <img src="data:image/png;base64,' . $qrcode->qr_code . '" style="width: 100px; height: 100px; border-radius: 8px;" alt="QR Code"/>
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <label for="crypto-address" style="display: block; color: #E0A130; font-size: 14px; font-weight: 500; margin-bottom: 8px;">Or Copy this address</label>
+                                            <div style="position: relative; display: flex; align-items: center;">
+                                                <input type="text" id="crypto-address" class="crypto-address-input" value="' . $payment_address . '" readonly style="width: 100%; padding: 12px 48px 12px 16px; background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; color: #fff; font-size: 14px; font-family: monospace; outline: none;"/>
+                                                <button type="button" id="copy-address-btn" style="position: absolute; right: 12px; background: transparent; border: none; cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center;" aria-label="Copy address">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect x="6" y="6" width="10" height="10" rx="2" stroke="#717182" stroke-width="1.5" fill="none"/>
+                                                        <path d="M4 6C4 4.89543 4.89543 4 6 4H10" stroke="#717182" stroke-width="1.5" stroke-linecap="round"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                    // <div style="text-align: center; margin-top: 24px;">
+                                    //     <a href="' . site_url('user/payment_successful/?id=' . $trans_no_enc) . '" class="btn btn-outline-primary btn-wave">Click After Payment.</a>
+                                    // </div>';
                                     $formMsg = array('status' => 'success', 'msg' => $html);
                                 }
                             }

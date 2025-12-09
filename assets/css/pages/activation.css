@@ -1015,8 +1015,29 @@
 /* Payment Details Section */
 .payment-details {
   width: 100%;
-  margin-top: 0;
+  margin-top: 24px;
   display: none;
+}
+
+.crypto-address-input {
+  transition: border-color 0.2s ease;
+}
+
+.crypto-address-input:focus {
+  border-color: #E0A130;
+}
+
+.crypto-address-input:hover {
+  border-color: #3a3a3a;
+}
+
+#copy-address-btn:hover svg rect,
+#copy-address-btn:hover svg path {
+  stroke: #E0A130;
+}
+
+#copy-address-btn:active {
+  transform: scale(0.95);
 }
 
 .payment-details__content {

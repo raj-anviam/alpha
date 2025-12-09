@@ -61,8 +61,27 @@
           e.preventDefault();
           e.stopPropagation();
           
-          // Toggle expanded state
-          item.classList.toggle('nav-item--expanded');
+          // Check if this item is already expanded
+          const isCurrentlyExpanded = item.classList.contains('nav-item--expanded');
+          
+          // Close all other expanded items (accordion behavior)
+          navItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('nav-item--expanded')) {
+              otherItem.classList.remove('nav-item--expanded');
+              // Clear localStorage for closed items
+              const otherParentText = otherItem.querySelector('.nav-link__text')?.textContent.trim();
+              if (otherParentText) {
+                localStorage.setItem('sidebar_expanded_' + otherParentText, false);
+              }
+            }
+          });
+          
+          // Toggle expanded state for clicked item
+          if (isCurrentlyExpanded) {
+            item.classList.remove('nav-item--expanded');
+          } else {
+            item.classList.add('nav-item--expanded');
+          }
           
           // Save expanded state to localStorage
           const parentText = item.querySelector('.nav-link__text')?.textContent.trim();
@@ -103,6 +122,15 @@
     if (pageInfo.parent) {
       // Find parent by text content
       const navItems = document.querySelectorAll('.nav-item');
+      
+      // Close all expanded items first (accordion behavior)
+      navItems.forEach(item => {
+        if (item.classList.contains('nav-item--expanded')) {
+          item.classList.remove('nav-item--expanded');
+        }
+      });
+      
+      // Then expand and activate the current parent
       navItems.forEach(item => {
         const linkText = item.querySelector('.nav-link__text')?.textContent.trim();
         if (linkText === pageInfo.parent) {
@@ -175,12 +203,24 @@
         if (item) {
           if (item.classList.contains('nav-sub-item')) {
             item.classList.add('nav-sub-item--active');
-            // Expand parent
+            // Expand parent and close all other expanded items
             const parent = item.closest('.nav-item');
             if (parent) {
+              // Close all other expanded items
+              document.querySelectorAll('.nav-item').forEach(otherItem => {
+                if (otherItem !== parent && otherItem.classList.contains('nav-item--expanded')) {
+                  otherItem.classList.remove('nav-item--expanded');
+                }
+              });
               parent.classList.add('nav-item--expanded', 'nav-item--active');
             }
           } else {
+            // Close all expanded items when activating a standalone item
+            document.querySelectorAll('.nav-item').forEach(otherItem => {
+              if (otherItem !== item && otherItem.classList.contains('nav-item--expanded')) {
+                otherItem.classList.remove('nav-item--expanded');
+              }
+            });
             item.classList.add('nav-item--active');
           }
         }

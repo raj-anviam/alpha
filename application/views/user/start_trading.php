@@ -266,12 +266,12 @@
             <!-- Step 02 Action Buttons -->
             <div class="trading-form__actions">
               <button type="button" class="btn-back" id="previous-btn">Previous</button>
-              <button type="button" class="btn-connect" id="submit-payment-btn">
+              <a href="<?php echo site_url('user/payment_successful'); ?>" type="button" class="btn-connect" id="submit-payment-btn">
                 <span>Click After Payment</span>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </form>
@@ -390,7 +390,7 @@
           url: actionUrl,
           data: postData, // Explicitly built object with method_id
           success: function(data) {
-            $('#loader').hide();                                                                                                                                                                                                                                                                                                                                                
+            $('#loader').hide();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
             selectElement.prop('disabled', false);
             
             var myData = JSON.parse(data);
@@ -464,7 +464,7 @@
             if (copyBtn) {
               const originalHTML = copyBtn.innerHTML;
               copyBtn.innerHTML = `
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13 4L6 11L3 8" stroke="#00FF9C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               `;
