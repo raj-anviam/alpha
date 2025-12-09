@@ -50,6 +50,8 @@ $currentPage = !empty($pageTitles[$currentPath]) ? $pageTitles[$currentPath] : a
   <script src="<?php echo base_url('assets/js/sidebar-navigation.js'); ?>"></script>
   <script src="<?php echo base_url('assets/js/logout.js'); ?>"></script>
   <script src="<?php echo base_url('assets/js/mobile-navbar.js'); ?>"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="<?php echo base_url('assets/js/form-submit-handler.js'); ?>"></script>
 </head>
 <body>
   <!-- Sidebar -->

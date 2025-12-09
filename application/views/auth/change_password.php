@@ -164,6 +164,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- jquery-toast-plugin JS CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+  <script src="<?php echo base_url('assets/js/form-submit-handler.js'); ?>"></script>
   <script>
     // Password toggle function
     function togglePassword(inputId, button) {
@@ -184,8 +185,16 @@
   <script>
     $("#changePwdform").submit(function(e) {
       e.preventDefault();
-      $('#loader').show();
       var form = $(this);
+      var submitBtn = form.find('button[type="submit"]');
+      var submitBtnText = submitBtn.find('span');
+      var originalText = submitBtnText.text();
+      
+      // Disable button and show submitting state
+      submitBtn.prop('disabled', true);
+      submitBtnText.text('Submitting...');
+      $('#loader').show();
+      
       var actionUrl = form.attr('action');
 
       $.ajax({
@@ -193,16 +202,27 @@
         url: actionUrl,
         data: form.serialize(),
         success: function(data) {
+          $('#loader').hide();
           var myData = JSON.parse(data);
           var status = myData.status;
           var msg = myData.msg;
           if (status == 'error') {
             toastmessage(msg, 'error', 'error');
+            // Re-enable button on error
+            submitBtn.prop('disabled', false);
+            submitBtnText.text(originalText);
           } else {
             var redirecturl = myData.url;
             toastmessagesuccess(msg, 'Success', 'success', redirecturl);
+            // Don't re-enable on success as we're redirecting
           }
+        },
+        error: function(xhr, status, error) {
           $('#loader').hide();
+          // Re-enable button on error
+          submitBtn.prop('disabled', false);
+          submitBtnText.text(originalText);
+          toastmessage('Something went wrong. Please try again.', 'Error', 'error');
         }
       });
     });

@@ -226,8 +226,26 @@
               <div class="input-container">
                 <select class="input-field input-field--select" id="payment-method" name="method_id">
                   <option value="">Select</option>
-                  <?php foreach($payment_method as $val){ ?>
-                    <option value="<?php echo base64e($val['payment_method_id']);?>"><?php echo $val['payment_method'];?></option>
+                  <?php 
+                  // Hardcoded method_id values for BEP 20 and TRC-20
+                  $bep20_method_id = '7sb0HhFOpRWRAHfOKxM1QA_E0L0S__E0L0S_';
+                  $trc20_method_id = 'f4S6C_S0L0H_amUTH36Z2OjmVhZQ_E0L0S__E0L0S_';
+                  
+                  foreach($payment_method as $val){ 
+                    $payment_method_name = strtolower(trim($val['payment_method']));
+                    $method_id_value = '';
+                    
+                    // Check if it's BEP 20 or TRC-20 and use hardcoded values
+                    if (strpos($payment_method_name, 'bep') !== false || strpos($payment_method_name, 'bep20') !== false || $payment_method_name == 'bep 20') {
+                      $method_id_value = $bep20_method_id;
+                    } elseif (strpos($payment_method_name, 'trc') !== false || strpos($payment_method_name, 'trc20') !== false || $payment_method_name == 'trc-20' || $payment_method_name == 'trc 20') {
+                      $method_id_value = $trc20_method_id;
+                    } else {
+                      // Use database encoded value for other payment methods
+                      $method_id_value = base64e($val['payment_method_id']);
+                    }
+                  ?>
+                    <option value="<?php echo $method_id_value; ?>"><?php echo $val['payment_method'];?></option>
                   <?php } ?>
                 </select>
                 <span class="select-arrow">
@@ -338,15 +356,43 @@
 
       // Payment method selection - AJAX call to get QR code (same as old page)
       $('#payment-method').on('change', function() {
+        var selectElement = $(this);
+        var selectedMethodId = selectElement.val();
+        
+        // Don't proceed if no method is selected
+        if (!selectedMethodId || selectedMethodId === '') {
+          return;
+        }
+        
         var form = $('#tradingForm');
         var actionUrl = form.attr('action');
+        
+                                                                                                                              // Build POST data object explicitly to ensure method_id is included
+        var postData = {
+          method_id: selectedMethodId,
+          server_name: $('input[name="server_name"]').val(),
+          trading_id: $('input[name="trading_id"]').val(),
+          trading_password: $('input[name="trading_password"]').val(),
+          email_id: $('input[name="email_id"]').val()
+        };
+        
+        // Debug: Log what we're sending
+        console.log('Sending POST data:', postData);
+        console.log('method_id value:', postData.method_id);
+        
+        // Disable select during AJAX call
+        selectElement.prop('disabled', true);
         $('#loader').removeClass('d-none');
         $('#loader').show();
+        
         $.ajax({
           type: "POST",
           url: actionUrl,
-          data: form.serialize(), // serializes the form's elements.
+          data: postData, // Explicitly built object with method_id
           success: function(data) {
+            $('#loader').hide();                                                                                                                                                                                                                                                                                                                                                
+            selectElement.prop('disabled', false);
+            
             var myData = JSON.parse(data);
             var status = myData.status;
             var msg = myData.msg;
@@ -358,7 +404,14 @@
               $('#payment-details').hide();
               toastmessage(msg, 'error', 'error');
             }
+          },
+          error: function(xhr, status, error) {
             $('#loader').hide();
+            selectElement.prop('disabled', false);
+            console.error('AJAX Error:', error);
+            console.error('Response:', xhr.responseText);
+            console.error('Request data:', postData);
+            toastmessage('Something went wrong. Please try again.', 'Error', 'error');
           }
         });
       });

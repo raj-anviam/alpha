@@ -40,12 +40,20 @@ class User extends CI_Controller
 
         $formMsg = array('status' => 'error', 'msg' => 'Invalid Data.');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $method = $_POST['method_id'];
-            $server_name = $_POST['server_name'];
-            $trading_id = $_POST['trading_id'];
-            $trading_password = $_POST['trading_password'];
-            $email_id = $_POST['email_id'];
-            if ($method != '' && $server_name != '' && $trading_id != '' && $trading_password != '' && $email_id != '') {
+            // Use CodeIgniter input class with proper checks
+            $method = $this->input->post('method_id');
+            $server_name = $this->input->post('server_name');
+            $trading_id = $this->input->post('trading_id');
+            $trading_password = $this->input->post('trading_password');
+            $email_id = $this->input->post('email_id');
+            
+            // Debug: Log received data (remove in production)
+            // error_log('Received method_id: ' . ($method ? $method : 'EMPTY'));
+            // error_log('Received server_name: ' . ($server_name ? $server_name : 'EMPTY'));
+            // error_log('All POST data: ' . print_r($_POST, true));
+            
+            // Check if all required fields are present and not empty
+            if ($method != '' && $method != null && $server_name != '' && $trading_id != '' && $trading_password != '' && $email_id != '') {
                 if ($method == '7sb0HhFOpRWRAHfOKxM1QA_E0L0S__E0L0S_' || $method == 'f4S6C_S0L0H_amUTH36Z2OjmVhZQ_E0L0S__E0L0S_') {
                     if ($method == 'f4S6C_S0L0H_amUTH36Z2OjmVhZQ_E0L0S__E0L0S_') {
                         $coin = 'trc20_usdt';

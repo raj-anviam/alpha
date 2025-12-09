@@ -159,9 +159,10 @@
                   type="text" 
                   id="code" 
                   name="code" 
+                  value="<?php echo !empty($uri3) ? htmlspecialchars($uri3) : ''; ?>"
                   placeholder="Enter referral code" 
                   class="input-field"
-                />
+                />                                                                                                                        
               </div>
             </div>
 
@@ -198,6 +199,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- jquery-toast-plugin JS CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+  <script src="<?php echo base_url('assets/js/form-submit-handler.js'); ?>"></script>
   <script>
     // Password toggle function
     function togglePassword(inputId, button) {
@@ -218,25 +220,54 @@
   <script>
     $("#signupform").submit(function(e) {
       e.preventDefault();
-      $('#loader').show();
       var form = $(this);
+      var submitBtn = form.find('button[type="submit"]');
+      var submitBtnText = submitBtn.find('span');
+      var originalText = submitBtnText.text();
+      
+      // Disable button and show submitting state
+      submitBtn.prop('disabled', true);
+      submitBtnText.text('Submitting...');
+      $('#loader').show();
+      
       var actionUrl = form.attr('action');
 
       $.ajax({
         type: "POST",
         url: actionUrl,
         data: form.serialize(),
+        dataType: 'json',
         success: function(data) {
-          var myData = JSON.parse(data);
-          var status = myData.status;
-          var msg = myData.msg;
-          if (status == 'error') {
-            toastmessage(msg, 'error', 'error');
-          } else {
-            var redirecturl = myData.url;
-            toastmessagesuccess(msg, 'Success', 'success', redirecturl);
-          }
           $('#loader').hide();
+          var status = data.status;
+          var msg = data.msg;
+          if (status == 'error') {
+            toastmessage(msg, 'Error', 'error');
+            // Re-enable button on error
+            submitBtn.prop('disabled', false);
+            submitBtnText.text(originalText);
+          } else {
+            var redirecturl = data.url;
+            toastmessagesuccess(msg, 'Success', 'success', redirecturl);
+            // Don't re-enable on success as we're redirecting
+          }
+        },
+        error: function(xhr, status, error) {
+          $('#loader').hide();
+          // Re-enable button on error
+          submitBtn.prop('disabled', false);
+          submitBtnText.text(originalText);
+          
+          try {
+            var response = JSON.parse(xhr.responseText);
+            if (response.msg) {
+              toastmessage(response.msg, 'Error', 'error');
+            } else {
+              toastmessage('Something went wrong. Please try again.', 'Error', 'error');
+            }
+          } catch(e) {
+            toastmessage('Something went wrong. Please try again.', 'Error', 'error');
+          }
         }
       });
     });

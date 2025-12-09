@@ -67,7 +67,7 @@ class Auth extends CI_Controller
             );
             $ref_data = array();
             if ($code != '') {
-                $Whr = "referal_code = " . $code;
+                $Whr = "referal_code = '" . $this->db->escape_str($code) . "'";
                 $ref_data = $this->common_model->getRecordData('itroducing_alpha', $Whr);
                 if (!empty($ref_data)) {
                     $reference_id = $ref_data[0]['user_id'];
@@ -193,6 +193,78 @@ class Auth extends CI_Controller
                     }
                 }
             }
+        }
+        echo json_encode($formSubmit);
+    }
+
+    function resend_otp()
+    {
+        $formSubmit = array('status' => 'error', 'url' => '', 'msg' => 'Something Went Wrong.');
+        $uri3 = $this->uri->segment(3);
+        
+        if ($uri3 != '') {
+            // Get the existing OTP record to find user_id (even if expired, we can still resend)
+            $cwhr = "token = '".$this->db->escape_str($uri3)."'";
+            $recById = $this->common_model->getRecordData('verification_otp', $cwhr);
+            
+            if (!empty($recById)) {
+                $user_id = $recById[0]['user_id'];
+                $otp_type_id = $recById[0]['otp_type_id'];
+                
+                // Get user email
+                $userWhr = "user_id = " . (int)$user_id;
+                $userData = $this->common_model->getRecordData('users', $userWhr);
+                
+                if (!empty($userData)) {
+                    $email = $userData[0]['email'];
+                    
+                    // Generate new OTP
+                    $otp = rand(1000, 9999);
+                    
+                    // Send email
+                    $this->load->library('Email_lib');
+                    $mailMsg = '<h2>Your verification Code is ' . $otp . '</h2>';
+                    $result = $this->email_lib->send_email(
+                        $email,
+                        'Email Verification Code',
+                        $mailMsg
+                    );
+                    
+                    if ($result === true) {
+                        // Generate new token
+                        $token = randomString(32);
+                        
+                        $datetime = new DateTime();
+                        $created_on = $datetime->format('Y-m-d H:i:s');
+                        $expire_on_datetime = $datetime->modify('+10 minutes');
+                        $expire_on = $expire_on_datetime->format('Y-m-d H:i:s');
+                        
+                        // Update existing OTP record with new token, OTP, and expiry
+                        $otp_d = array(
+                            'token' => $token,
+                            'otp' => $otp,
+                            'created_on' => $created_on,
+                            'expire_on' => $expire_on
+                        );
+                        $otp_id = $recById[0]['verification_otp_id'];
+                        $rData = $this->common_model->update($otp_id, $otp_d, 'verification_otp_id', 'verification_otp');
+                        
+                        if (is_numeric($rData)) {
+                            $formSubmit['status'] = 'success';
+                            $formSubmit['url'] = site_url('auth/verify_email/' . $token);
+                            $formSubmit['msg'] = 'OTP has been resent to your email. Please check your inbox.';
+                        }
+                    } else {
+                        $formSubmit['msg'] = 'Email Verification Error.';
+                    }
+                } else {
+                    $formSubmit['msg'] = 'User not found.';
+                }
+            } else {
+                $formSubmit['msg'] = 'Invalid or expired token.';
+            }
+        } else {
+            $formSubmit['msg'] = 'Token is required.';
         }
         echo json_encode($formSubmit);
     }

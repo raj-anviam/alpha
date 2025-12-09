@@ -58,8 +58,8 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary btn-icon">
-              <span>Submit</span>
+            <button type="submit" class="btn btn-primary btn-icon" id="forgot-password-submit">
+              <span id="forgot-password-submit-text">Submit</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -107,6 +107,23 @@
   <footer class="footer mt-auto py-3 text-center">
   </footer>
   <!-- Footer End -->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $("form").submit(function() {
+      var form = $(this);
+      var submitBtn = form.find('button[type="submit"]');
+      var submitBtnText = $('#forgot-password-submit-text');
+      var originalText = submitBtnText.text();
+      
+      // Disable button and show submitting state
+      submitBtn.prop('disabled', true);
+      submitBtnText.text('Submitting...');
+      
+      // Note: Button will be re-enabled if form validation fails and page reloads
+      // For successful submission, page will redirect so button state doesn't matter
+    });
+  </script>
 </body>
 </html>
 

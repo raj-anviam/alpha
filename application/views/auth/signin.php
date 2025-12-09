@@ -144,6 +144,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- jquery-toast-plugin JS CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+  <script src="<?php echo base_url('assets/js/form-submit-handler.js'); ?>"></script>
   <script>
     // Password toggle function
     function togglePassword(inputId, button) {
@@ -163,7 +164,18 @@
   </script>
   <script>
     $("#signinform").submit(function() {
+      var form = $(this);
+      var submitBtn = form.find('button[type="submit"]');
+      var submitBtnText = submitBtn.find('span');
+      var originalText = submitBtnText.text();
+      
+      // Disable button and show submitting state
+      submitBtn.prop('disabled', true);
+      submitBtnText.text('Signing In...');
       $('#loader').show();
+      
+      // Note: Button will be re-enabled if form validation fails and page reloads
+      // For successful submission, page will redirect so button state doesn't matter
     });
   </script>
 </body>

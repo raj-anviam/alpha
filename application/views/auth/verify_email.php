@@ -105,7 +105,7 @@
               <div class="form-options" style="margin-bottom: 24px;">
                 <label class="checkbox-wrapper">
                   <input type="checkbox" id="defaultCheck1" name="defaultCheck1" class="checkbox-input">
-                  <span class="checkbox-label">Didn't receive a code? <a href="mail.html" class="text-primary" style="text-decoration: none;">Resend</a></span>
+                  <span class="checkbox-label">Didn't receive a code? <a href="javascript:void(0);" id="resend-otp-link" class="text-primary" style="text-decoration: none;">Resend</a></span>
                 </label>
               </div>
 
@@ -154,6 +154,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- jquery-toast-plugin JS CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+  <script src="<?php echo base_url('assets/js/form-submit-handler.js'); ?>"></script>
   <script>
     // OTP input focus function
     function clickEvent(first, last) {
@@ -165,8 +166,16 @@
     // Form submission
     $("#verifyemailform").submit(function(e) {
       e.preventDefault();
-      $('#loader').show();
       var form = $(this);
+      var submitBtn = form.find('button[type="submit"]');
+      var submitBtnText = submitBtn.find('span');
+      var originalText = submitBtnText.text();
+      
+      // Disable button and show submitting state
+      submitBtn.prop('disabled', true);
+      submitBtnText.text('Verifying...');
+      $('#loader').show();
+      
       var actionUrl = form.attr('action');
 
       $.ajax({
@@ -174,16 +183,27 @@
         url: actionUrl,
         data: form.serialize(),
         success: function(data) {
+          $('#loader').hide();
           var myData = JSON.parse(data);
           var status = myData.status;
           var msg = myData.msg;
           if (status == 'error') {
             toastmessage(msg, 'error', 'error');
+            // Re-enable button on error
+            submitBtn.prop('disabled', false);
+            submitBtnText.text(originalText);
           } else {
             var redirecturl = myData.url;
             toastmessagesuccess(msg, 'Success', 'success', redirecturl);
+            // Don't re-enable on success as we're redirecting
           }
+        },
+        error: function(xhr, status, error) {
           $('#loader').hide();
+          // Re-enable button on error
+          submitBtn.prop('disabled', false);
+          submitBtnText.text(originalText);
+          toastmessage('Something went wrong. Please try again.', 'Error', 'error');
         }
       });
     });
@@ -222,6 +242,44 @@
         loaderBg: '#9EC600',
       });
     }
+
+    // Resend OTP functionality
+    $('#resend-otp-link').on('click', function(e) {
+      e.preventDefault();
+      var link = $(this);
+      var originalText = link.text();
+      var token = '<?php echo $uri3; ?>';
+      
+      if (!token) {
+        toastmessage('Invalid token. Please try again.', 'Error', 'error');
+        return;
+      }
+      
+      // Disable link and show loading state
+      link.css('pointer-events', 'none').text('Sending...');
+      $('#loader').show();
+      
+      $.ajax({
+        type: "GET",
+        url: '<?php echo site_url("auth/resend_otp"); ?>/' + token,
+        dataType: 'json',
+        success: function(data) {
+          $('#loader').hide();
+          link.css('pointer-events', 'auto').text(originalText);
+          
+          if (data.status == 'success') {
+            toastmessagesuccess(data.msg, 'Success', 'success', data.url);
+          } else {
+            toastmessage(data.msg, 'Error', 'error');
+          }
+        },
+        error: function(xhr, status, error) {
+          $('#loader').hide();
+          link.css('pointer-events', 'auto').text(originalText);
+          toastmessage('Something went wrong. Please try again.', 'Error', 'error');
+        }
+      });
+    });
   </script>
 </body>
 </html>
